@@ -305,14 +305,46 @@
     $('#f-topic').value = el.dataset.topic;
   }));
 
-  /* ---------- Contact form → opens the visitor's mail app ---------- */
+  /* ---------- Contact form → Google Sheet ---------- */
+  // Paste the Google Apps Script web app URL here (see google-apps-script/README.md).
+  // While it is empty the form falls back to opening the visitor's mail app.
+  const SHEET_ENDPOINT = '';
+  const CONTACT_EMAIL = 'consult@lotfy.me';
+  const MSG = {
+    invalid: { en: '> please fill in every field, with a valid email and phone number.', ar: 'يرجى تعبئة جميع الحقول والتأكد من البريد الإلكتروني ورقم الجوال.' },
+    sending: { en: '> sending…', ar: 'جارٍ الإرسال…' },
+    sent: { en: '> received. I will get back to you soon.', ar: 'تم استلام طلبك، وسأتواصل معك قريبًا.' },
+    failed: { en: '> could not send. Please try again, or write to ' + CONTACT_EMAIL, ar: 'تعذّر الإرسال. حاول مرة أخرى أو راسلني على ' + CONTACT_EMAIL },
+    mail: { en: '> opening your mail app to send…', ar: 'سيُفتح تطبيق البريد لإرسال رسالتك…' }
+  };
   const form = $('#form'), note = $('#formNote');
-  form.addEventListener('submit', e => {
+  const say = key => { note.textContent = MSG[key][lang]; };
+  form.addEventListener('submit', async e => {
     e.preventDefault();
-    if (!form.checkValidity()) { note.textContent = lang === 'ar' ? 'يرجى تعبئة جميع الحقول والتأكد من البريد الإلكتروني ورقم الجوال.' : '> please fill in every field, with a valid email and phone number.'; form.reportValidity(); return; }
+    if (!form.checkValidity()) { say('invalid'); form.reportValidity(); return; }
     const d = new FormData(form);
-    const body = `${d.get('message')}\n\n— ${d.get('name')} (${d.get('email')}, ${d.get('phone')})`;
-    location.href = `mailto:consult@lotfy.me?subject=${encodeURIComponent(d.get('topic') + ' — ' + d.get('name'))}&body=${encodeURIComponent(body)}`;
-    note.textContent = lang === 'ar' ? 'سيُفتح تطبيق البريد لإرسال رسالتك…' : '> opening your mail app to send…';
+    if (d.get('website')) return; // bots fill the hidden field
+    if (!SHEET_ENDPOINT) {
+      const body = `${d.get('message')}\n\n— ${d.get('name')} (${d.get('email')}, ${d.get('phone')})`;
+      location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(d.get('topic') + ' — ' + d.get('name'))}&body=${encodeURIComponent(body)}`;
+      say('mail');
+      return;
+    }
+    const btn = form.querySelector('button[type="submit"]');
+    btn.disabled = true;
+    say('sending');
+    try {
+      const data = new URLSearchParams(d);
+      data.set('lang', lang);
+      const res = await fetch(SHEET_ENDPOINT, { method: 'POST', body: data });
+      const out = await res.json();
+      if (!out.ok) throw new Error('rejected');
+      form.reset();
+      say('sent');
+    } catch (err) {
+      say('failed');
+    } finally {
+      btn.disabled = false;
+    }
   });
 })();

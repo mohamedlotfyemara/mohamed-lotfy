@@ -476,3 +476,6 @@ ol, ul { margin: 0; padding: 0; list-style: none; }
 }
 [dir="rtl"] .stat b em:not([data-ar]) { font-size: 1em; margin-inline-start: 0; }
 [dir="rtl"] .form input[type="tel"], [dir="rtl"] .form input[type="email"] { text-align: right; }
+.form__hp { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+.form { position: relative; }
+.btn:disabled { opacity: .6; cursor: progress; }
