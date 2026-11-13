@@ -451,3 +451,4 @@ ol, ul { margin: 0; padding: 0; list-style: none; }
   [dir="rtl"] .job__body { padding-right: 0; }
 }
 [dir="rtl"] .contact__phone { direction: ltr; text-align: right; }
+.stat b { font-size: clamp(40px, 6vw, 84px); }
