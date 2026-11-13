@@ -694,3 +694,18 @@ ol, ul { margin: 0; padding: 0; list-style: none; }
 .stat b { display: inline-block; transform-origin: 0 50%; }
 .trust b { display: inline-block; transform-origin: 0 50%; }
 [dir="rtl"] .stat b, [dir="rtl"] .trust b { transform-origin: 100% 50%; }
+
+/* six stats: three per row */
+.stats { grid-template-columns: repeat(3, 1fr); }
+.stat { border-bottom: 1px solid var(--line); padding-bottom: 24px; }
+.stat:nth-child(3n) { border-right: 0; }
+[dir="rtl"] .stat:nth-child(3n) { border-left: 0; }
+.stat:last-child { grid-column: auto; }
+@media (max-width: 1000px) {
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .stat:nth-child(3n) { border-right: 1px solid var(--line); }
+  .stat:nth-child(2n) { border-right: 0; }
+  [dir="rtl"] .stat:nth-child(3n) { border-left: 1px solid var(--line); }
+  [dir="rtl"] .stat:nth-child(2n) { border-left: 0; }
+}
+.trust { gap: 10px 24px; }

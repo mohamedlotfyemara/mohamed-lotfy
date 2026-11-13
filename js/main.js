@@ -78,9 +78,9 @@
     setTimeout(typeLoop, 1200);
     const trustIO = new IntersectionObserver(([e]) => {
       if (!e.isIntersecting) return;
-      setTimeout(() => $$('.trust .count').forEach(count), 700);
+      $$('.trust .count').forEach(count);
       trustIO.disconnect();
-    }, { threshold: 0.6 });
+    }, { threshold: 0.2 });
     trustIO.observe($('.trust'));
   }
   if (reduced) {
