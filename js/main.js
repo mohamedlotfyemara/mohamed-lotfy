@@ -315,7 +315,7 @@
     sending: { en: '> sending…', ar: 'جارٍ الإرسال…' },
     sent: { en: '> received. I will get back to you soon.', ar: 'تم استلام طلبك، وسأتواصل معك قريبًا.' },
     failed: { en: '> could not send. Please try again, or write to ' + CONTACT_EMAIL, ar: 'تعذّر الإرسال. حاول مرة أخرى أو راسلني على ' + CONTACT_EMAIL },
-    mail: { en: '> opening your mail app to send…', ar: 'سيُفتح تطبيق البريد لإرسال رسالتك…' }
+    mail: { en: '> your message is ready. Press send in your mail app and it will reach me.', ar: 'رسالتك جاهزة. اضغط «إرسال» في تطبيق البريد ليصلني طلبك.' }
   };
   const form = $('#form'), note = $('#formNote');
   const say = key => { note.textContent = MSG[key][lang]; };
