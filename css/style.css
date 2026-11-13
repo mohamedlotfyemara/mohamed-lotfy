@@ -662,3 +662,5 @@ ol, ul { margin: 0; padding: 0; list-style: none; }
   .offer__list li, .contact__points li, .trust li { opacity: 1; transform: none; }
 }
 .trust b span { font: inherit; color: inherit; text-transform: none; letter-spacing: inherit; }
+.project__go--soon { color: var(--muted); border-style: dashed; }
+.project:hover .project__go--soon { background: none; color: var(--accent); border-color: var(--accent); }
