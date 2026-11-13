@@ -36,7 +36,7 @@
     'handshake ............... <b>ok</b>',
     'loading experience ...... <b>2013 → now</b>',
     'mounting products ....... <b>ok</b>',
-    'compiling leadership .... <b>ok</b>',
+    'building startups ....... <b>0 → scale</b>',
     '<b>ready.</b>'
   ];
   function start() {
@@ -65,7 +65,7 @@
   }
 
   /* ---------- Typed roles ---------- */
-  const roles = ['and run companies.', 'software teams that ship.', 'products from idea to launch.', 'mobile apps people love.', 'systems that run businesses.'];
+  const roles = ['startups from zero.', 'businesses that turn a profit.', 'companies that scale.', 'teams that deliver.'];
   const typed = $('#typed');
   function typeLoop() {
     if (reduced) { typed.textContent = roles[0]; return; }
@@ -268,6 +268,11 @@
     })();
   }
 
+  /* ---------- Topic shortcuts: preselect the form topic ---------- */
+  $$('[data-topic]').forEach(el => el.addEventListener('click', () => {
+    $('#f-topic').value = el.dataset.topic;
+  }));
+
   /* ---------- Contact form → opens the visitor's mail app ---------- */
   const form = $('#form'), note = $('#formNote');
   form.addEventListener('submit', e => {
@@ -275,7 +280,7 @@
     if (!form.checkValidity()) { note.textContent = '> please fill in every field with a valid email.'; form.reportValidity(); return; }
     const d = new FormData(form);
     const body = `${d.get('message')}\n\n— ${d.get('name')} (${d.get('email')})`;
-    location.href = `mailto:mohamed_lotfy@codebase-tech.com?subject=${encodeURIComponent(d.get('subject'))}&body=${encodeURIComponent(body)}`;
+    location.href = `mailto:mohamed_lotfy@codebase-tech.com?subject=${encodeURIComponent(d.get('topic') + ' — ' + d.get('name'))}&body=${encodeURIComponent(body)}`;
     note.textContent = '> opening your mail app to send…';
   });
 })();

@@ -216,6 +216,13 @@ ol, ul { margin: 0; padding: 0; list-style: none; }
 .now__item p { color: var(--muted); font-size: 15.5px; }
 @media (max-width: 860px) { .now__grid { grid-template-columns: 1fr; } }
 
+.now__item { display: flex; flex-direction: column; transition: border-color .3s; }
+.now__item:hover { border-top-color: var(--accent); }
+.now__item p { flex: 1; }
+.now__go { margin-top: 18px; font: 500 13px var(--mono); color: var(--accent); }
+.form select { width: 100%; background: var(--bg); border: 0; border-bottom: 1px solid var(--line-2); color: var(--text); font: 400 18px var(--display); padding: 10px 0; border-radius: 0; cursor: pointer; }
+.form select:focus { outline: 0; border-color: var(--accent); box-shadow: 0 1px 0 var(--accent); }
+
 /* ---------- Cards ---------- */
 .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 22px; overflow: hidden; }
 .card { position: relative; padding: clamp(24px, 3vw, 40px); background: var(--bg-2); overflow: hidden; min-height: 290px; }
