@@ -12,7 +12,7 @@
   /* ---------- Language (English / Arabic) ---------- */
   const TITLES = {
     en: document.title,
-    ar: 'محمد لطفي — أبني الشركات الناشئة من الصفر إلى الربح والتوسّع'
+    ar: 'محمد لطفي — أؤسس الشركات الناشئة من الصفر حتى الربح والتوسّع'
   };
   const langBtn = $('#langToggle');
   let lang = 'en';
@@ -97,7 +97,7 @@
   /* ---------- Typed roles ---------- */
   const ROLES = {
     en: ['startups from zero.', 'businesses that turn a profit.', 'companies that scale.', 'teams that deliver.'],
-    ar: ['شركات ناشئة من الصفر.', 'أعمالًا تحقق أرباحًا.', 'شركات تتوسّع.', 'فرقًا تُنجز.']
+    ar: ['شركات ناشئة من الصفر.', 'مشاريع تربح.', 'شركات تكبر وتتوسّع.', 'فرق عمل تنجز.']
   };
   const typed = $('#typed');
   function typeLoop() {
@@ -309,10 +309,10 @@
   const form = $('#form'), note = $('#formNote');
   form.addEventListener('submit', e => {
     e.preventDefault();
-    if (!form.checkValidity()) { note.textContent = lang === 'ar' ? 'من فضلك املأ كل الحقول ببريد إلكتروني صحيح.' : '> please fill in every field with a valid email.'; form.reportValidity(); return; }
+    if (!form.checkValidity()) { note.textContent = lang === 'ar' ? 'يرجى تعبئة جميع الحقول والتأكد من البريد الإلكتروني ورقم الجوال.' : '> please fill in every field, with a valid email and phone number.'; form.reportValidity(); return; }
     const d = new FormData(form);
-    const body = `${d.get('message')}\n\n— ${d.get('name')} (${d.get('email')})`;
+    const body = `${d.get('message')}\n\n— ${d.get('name')} (${d.get('email')}, ${d.get('phone')})`;
     location.href = `mailto:consult@lotfy.me?subject=${encodeURIComponent(d.get('topic') + ' — ' + d.get('name'))}&body=${encodeURIComponent(body)}`;
-    note.textContent = lang === 'ar' ? 'جارٍ فتح تطبيق البريد للإرسال…' : '> opening your mail app to send…';
+    note.textContent = lang === 'ar' ? 'سيُفتح تطبيق البريد لإرسال رسالتك…' : '> opening your mail app to send…';
   });
 })();

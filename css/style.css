@@ -475,3 +475,4 @@ ol, ul { margin: 0; padding: 0; list-style: none; }
   .stat:last-child { grid-column: 1 / -1; }
 }
 [dir="rtl"] .stat b em:not([data-ar]) { font-size: 1em; margin-inline-start: 0; }
+[dir="rtl"] .form input[type="tel"], [dir="rtl"] .form input[type="email"] { text-align: right; }
