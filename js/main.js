@@ -65,7 +65,7 @@
   }
 
   /* ---------- Typed roles ---------- */
-  const roles = ['iOS apps people love.', 'engineering teams that ship.', 'cross-platform products.', 'software companies.', 'systems that scale.'];
+  const roles = ['a software agency.', 'products for Egypt & KSA.', 'engineering teams that ship.', 'mobile apps people love.', 'systems that run businesses.'];
   const typed = $('#typed');
   function typeLoop() {
     if (reduced) { typed.textContent = roles[0]; return; }
