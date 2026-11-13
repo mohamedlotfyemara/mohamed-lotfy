@@ -719,3 +719,34 @@ ol, ul { margin: 0; padding: 0; list-style: none; }
 .contact { padding-bottom: clamp(56px, 7vw, 96px); }
 .footer__mono { direction: ltr; unicode-bidi: isolate; }
 @media (max-width: 560px) { .footer__in { flex-direction: column; align-items: flex-start; gap: 8px; } }
+
+/* ================= Typography: one family per language ================= */
+/* Arabic: everything in IBM Plex Sans Arabic, so Latin words, numbers and labels match the Arabic text. */
+[dir="rtl"] {
+  --display: "IBM Plex Sans Arabic", "Segoe UI", system-ui, sans-serif;
+  --mono: "IBM Plex Sans Arabic", "Segoe UI", system-ui, sans-serif;
+}
+/* Buttons and pill links share the display face and weight in both languages. */
+.btn, .lang, .nav__links .nav__cta, .project__go, .social a, .sticky-cta, .offer__tag, .chip {
+  font-family: var(--display);
+  letter-spacing: 0;
+  text-transform: none;
+}
+.btn, .sticky-cta { font-weight: 600; font-size: 15px; }
+.lang, .project__go, .social a { font-weight: 600; font-size: 13.5px; }
+.nav__links .nav__cta { font-weight: 600; }
+.chip { font-weight: 500; font-size: 12.5px; }
+.offer__tag { font-weight: 700; font-size: 11.5px; }
+.form input, .form textarea, .form select, .form__note { font-family: var(--display); }
+.stat > span, .trust span { font-family: var(--display); text-transform: none; letter-spacing: 0; }
+
+/* ================= Hero numbers: an even five-column row ================= */
+.trust { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0; }
+.trust li { padding: 4px 14px; border-inline-start: 1px solid var(--line); align-content: start; }
+.trust li:first-child { padding-inline-start: 0; border-inline-start: 0; }
+.trust b { font-size: clamp(20px, 2vw, 27px); line-height: 1.15; white-space: nowrap; }
+.trust li > span { display: block; margin-top: 4px; font-size: 12.5px; font-weight: 500; line-height: 1.35; color: var(--muted); }
+@media (max-width: 560px) {
+  .trust { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 16px; }
+  .trust li:nth-child(4) { padding-inline-start: 0; border-inline-start: 0; }
+}
