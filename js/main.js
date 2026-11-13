@@ -134,6 +134,9 @@
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     if (reduced) draw(0);
   }
+  const css = getComputedStyle(document.documentElement);
+  const FA = (css.getPropertyValue('--field-a') || '').trim() || '200,255,62';
+  const FB = (css.getPropertyValue('--field-b') || '').trim() || '62,230,255';
   function draw(time) {
     const t = time * 0.00055;
     ctx.clearRect(0, 0, W, H);
@@ -158,13 +161,13 @@
         const sy = horizon + (240 + y) * s;
         const lift = clamp((40 - y) / 150, 0, 1);
         if (i > 0 && j % 2 === 0) {
-          ctx.strokeStyle = `rgba(200,255,62,${0.05 + fade * 0.16})`;
+          ctx.strokeStyle = `rgba(${FA},${0.05 + fade * 0.16})`;
           ctx.beginPath(); ctx.moveTo(px, py); ctx.lineTo(sx, sy); ctx.stroke();
         }
         const r = Math.max(0.5, s * 2.5 * (0.6 + lift));
         ctx.fillStyle = lift > 0.72
-          ? `rgba(62,230,255,${0.25 + fade * 0.7})`
-          : `rgba(200,255,62,${0.2 + fade * 0.8 * (0.45 + lift)})`;
+          ? `rgba(${FB},${0.25 + fade * 0.7})`
+          : `rgba(${FA},${0.2 + fade * 0.8 * (0.45 + lift)})`;
         ctx.fillRect(sx - r / 2, sy - r / 2, r, r);
         px = sx; py = sy;
       }
