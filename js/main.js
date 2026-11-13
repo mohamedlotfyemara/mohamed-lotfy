@@ -76,6 +76,7 @@
     $$('.hero .scramble').forEach(el =>
       setTimeout(() => scramble(el, el.dataset.text, 1100), +el.dataset.delay || 0));
     setTimeout(typeLoop, 1200);
+    setTimeout(() => $$('.trust .count').forEach(count), 1000);
   }
   if (reduced) {
     start();
@@ -205,13 +206,19 @@
   }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
   $$('.reveal, .split, .scramble-in').forEach(el => io.observe(el));
 
+  // Icons draw themselves in; list items and checks pop in one after another.
+  $$('.card__icon *').forEach(n => n.setAttribute('pathLength', '1'));
+  $$('.offer__list, .contact__points, .trust').forEach(list =>
+    [...list.children].forEach((li, i) => li.style.setProperty('--i', i)));
+
   function count(el) {
     const to = el.dataset.since ? new Date().getFullYear() - +el.dataset.since : +el.dataset.to;
     if (reduced) { el.textContent = to; return; }
     const t0 = performance.now(), dur = 1400;
     (function f(now) {
       const p = clamp((now - t0) / dur, 0, 1);
-      el.textContent = Math.round((1 - Math.pow(1 - p, 4)) * to);
+      const n = Math.round((1 - Math.pow(1 - p, 4)) * to);
+      el.textContent = el.dataset.sep ? n.toLocaleString('en-US') : n;
       if (p < 1) requestAnimationFrame(f);
     })(t0);
   }
