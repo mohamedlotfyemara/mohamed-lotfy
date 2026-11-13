@@ -687,3 +687,10 @@ ol, ul { margin: 0; padding: 0; list-style: none; }
 @media (max-width: 560px) { .video { flex-direction: column; align-items: flex-start; } }
 
 .contact__sub { font-weight: 600; margin-bottom: 10px; }
+
+/* counters: a short glow pulse when each number lands */
+.stat b.is-landed, .trust b.is-landed { animation: count-land .9s var(--ease); }
+@keyframes count-land { 0% { transform: scale(1); } 35% { transform: scale(1.08); text-shadow: 0 0 28px rgba(200, 255, 62, .7); } 100% { transform: scale(1); } }
+.stat b { display: inline-block; transform-origin: 0 50%; }
+.trust b { display: inline-block; transform-origin: 0 50%; }
+[dir="rtl"] .stat b, [dir="rtl"] .trust b { transform-origin: 100% 50%; }

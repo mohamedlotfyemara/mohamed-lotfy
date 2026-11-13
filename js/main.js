@@ -76,7 +76,12 @@
     $$('.hero .scramble').forEach(el =>
       setTimeout(() => scramble(el, el.dataset.text, 1100), +el.dataset.delay || 0));
     setTimeout(typeLoop, 1200);
-    setTimeout(() => $$('.trust .count').forEach(count), 1000);
+    const trustIO = new IntersectionObserver(([e]) => {
+      if (!e.isIntersecting) return;
+      setTimeout(() => $$('.trust .count').forEach(count), 700);
+      trustIO.disconnect();
+    }, { threshold: 0.6 });
+    trustIO.observe($('.trust'));
   }
   if (reduced) {
     start();
@@ -214,12 +219,13 @@
   function count(el) {
     const to = el.dataset.since ? new Date().getFullYear() - +el.dataset.since : +el.dataset.to;
     if (reduced) { el.textContent = to; return; }
-    const t0 = performance.now(), dur = 1400;
+    const t0 = performance.now(), dur = 2200;
     (function f(now) {
       const p = clamp((now - t0) / dur, 0, 1);
       const n = Math.round((1 - Math.pow(1 - p, 4)) * to);
       el.textContent = el.dataset.sep ? n.toLocaleString('en-US') : n;
       if (p < 1) requestAnimationFrame(f);
+      else { const b = el.closest('b'); if (b) { b.classList.remove('is-landed'); void b.offsetWidth; b.classList.add('is-landed'); } }
     })(t0);
   }
 
