@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mohamed Lotfy — Engineering leader, builder of software teams and products</title>
+<meta name="description" content="Mohamed Lotfy — Co-Founder & Executive Director at Quarizm Solutions. Engineering manager and mobile engineer building apps, platforms and the teams behind them since 2013.">
+<meta name="theme-color" content="#05070c">
+<meta property="og:title" content="Mohamed Lotfy — Engineering leader">
+<meta property="og:description" content="Co-Founder & Executive Director at Quarizm Solutions. Building software and the teams behind it since 2013.">
+<meta property="og:image" content="https://lotfy.me/assets/portrait.webp">
+<meta property="og:type" content="website">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="is-booting">
+
+<!-- Boot sequence -->
+<div class="boot" id="boot" aria-hidden="true">
+  <div class="boot__inner">
+    <pre class="boot__log" id="bootLog"></pre>
+    <div class="boot__bar"><i id="bootBar"></i></div>
+    <div class="boot__pct"><span id="bootPct">0</span>%</div>
+  </div>
+</div>
+
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+<div class="progress" aria-hidden="true"><i id="progress"></i></div>
+<div class="noise" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <a class="nav__logo" href="#top" aria-label="Mohamed Lotfy — home">
+    <span class="nav__mark">ML</span><span class="nav__name">lotfy<b>.me</b></span>
+  </a>
+  <nav class="nav__links" id="navLinks" aria-label="Primary">
+    <a href="#about"><i>01</i>About</a>
+    <a href="#services"><i>02</i>Services</a>
+    <a href="#experience"><i>03</i>Experience</a>
+    <a href="#work"><i>04</i>Work</a>
+    <a href="#talks"><i>05</i>Talks</a>
+    <a class="nav__cta" href="#contact">Let’s build</a>
+  </nav>
+  <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <canvas class="hero__canvas" id="field" aria-hidden="true"></canvas>
+  <div class="hero__glow" aria-hidden="true"></div>
+
+  <div class="wrap hero__grid">
+    <div class="hero__copy">
+      <p class="tag hero__tag"><span class="pulse"></span>Co-Founder &amp; Executive Director · Quarizm Solutions</p>
+      <h1 class="hero__title">
+        <span class="line"><span class="scramble" data-text="MOHAMED">MOHAMED</span></span>
+        <span class="line line--accent"><span class="scramble" data-text="LOTFY." data-delay="250">LOTFY.</span></span>
+      </h1>
+      <p class="hero__type"><span class="prompt">&gt;</span> I build <span id="typed"></span><span class="caret"></span></p>
+      <p class="hero__lead">Engineering manager and mobile engineer. Since 2013 I’ve been shipping apps, platforms and systems — and leading the teams that build them.</p>
+      <div class="hero__actions">
+        <a class="btn btn--solid magnetic" href="#contact"><span>Start a project</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn--ghost magnetic" href="#work"><span>See the work</span></a>
+      </div>
+    </div>
+
+    <div class="hero__visual">
+      <div class="portrait tilt" id="portrait">
+        <div class="portrait__ring" aria-hidden="true"></div>
+        <div class="portrait__frame">
+          <img src="assets/portrait.webp" alt="Portrait of Mohamed Lotfy" width="1000" height="1044">
+          <div class="portrait__scan" aria-hidden="true"></div>
+        </div>
+        <span class="hud hud--tl" aria-hidden="true"></span><span class="hud hud--tr" aria-hidden="true"></span>
+        <span class="hud hud--bl" aria-hidden="true"></span><span class="hud hud--br" aria-hidden="true"></span>
+        <div class="chip chip--a">Swift · UIKit</div>
+        <div class="chip chip--b">Flutter · Dart</div>
+        <div class="chip chip--c">Team leadership</div>
+      </div>
+    </div>
+  </div>
+
+  <a class="hero__scroll" href="#about" aria-label="Scroll to about"><span></span>scroll</a>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>Swift</span><span>UIKit</span><span>Flutter</span><span>Dart</span><span>iOS</span><span>Android</span><span>Engineering Management</span><span>Project Management</span><span>Program Management</span><span>UX Research</span><span>IT Consulting</span><span>Product Delivery</span>
+    <span>Swift</span><span>UIKit</span><span>Flutter</span><span>Dart</span><span>iOS</span><span>Android</span><span>Engineering Management</span><span>Project Management</span><span>Program Management</span><span>UX Research</span><span>IT Consulting</span><span>Product Delivery</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="wrap">
+    <header class="head reveal">
+      <span class="head__no">01</span>
+      <h2 class="head__title scramble-in" data-text="About">About</h2>
+    </header>
+    <div class="about">
+      <p class="about__big split">I’m a software engineering manager who is passionate about building software — apps, websites, systems — and anything touching high technology.</p>
+      <div class="about__side">
+        <p class="reveal">I deliver effective, creative solutions to business and technology challenges. I enjoy working closely with UI/UX teams to get the best quality, and with marketing and business teams by providing the analytics and data that help them decide.</p>
+        <p class="reveal">Today I lead the strategic direction of <b>Quarizm Solutions</b> — managing operations, growing partnerships, and driving innovation in software development, digital transformation and business solutions.</p>
+      </div>
+    </div>
+
+    <div class="stats">
+      <div class="stat reveal"><b><span class="count" data-since="2013">0</span><em>+</em></b><span>years building software</span></div>
+      <div class="stat reveal"><b><span class="count" data-to="9">0</span></b><span>companies &amp; teams</span></div>
+      <div class="stat reveal"><b><span class="count" data-to="4">0</span></b><span>platforms — iOS, Android, Flutter, desktop</span></div>
+      <div class="stat reveal"><b><span class="count" data-to="6">0</span></b><span>featured products below</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section section--alt" id="services">
+  <div class="wrap">
+    <header class="head reveal">
+      <span class="head__no">02</span>
+      <h2 class="head__title scramble-in" data-text="What I do">What I do</h2>
+    </header>
+    <div class="cards">
+      <article class="card spot reveal">
+        <span class="card__no">/01</span>
+        <svg class="card__icon" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="12" r="5"/><circle cx="10" cy="36" r="5"/><circle cx="38" cy="36" r="5"/><path d="M24 17v8M24 25L12 32M24 25l12 7"/></svg>
+        <h3>Engineering leadership</h3>
+        <p>Defining project requirements, building work schedules, delegating, and hitting daily, weekly and monthly goals — while keeping the team, management and clients aligned.</p>
+      </article>
+      <article class="card spot reveal">
+        <span class="card__no">/02</span>
+        <svg class="card__icon" viewBox="0 0 48 48" aria-hidden="true"><rect x="14" y="5" width="20" height="38" rx="4"/><path d="M21 10h6M22 38h4"/></svg>
+        <h3>Mobile engineering</h3>
+        <p>Large, beautiful iOS apps built from scratch in Swift, and cross-platform apps with Flutter and Dart — high quality, scalable, tailored to the business.</p>
+      </article>
+      <article class="card spot reveal">
+        <span class="card__no">/03</span>
+        <svg class="card__icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 12h22M6 24h36M6 36h28"/><circle cx="34" cy="12" r="4"/><circle cx="40" cy="36" r="4"/></svg>
+        <h3>Project &amp; program management</h3>
+        <p>Planning and running projects for smooth execution and on-time delivery, and coordinating related projects toward one strategic objective.</p>
+      </article>
+      <article class="card spot reveal">
+        <span class="card__no">/04</span>
+        <svg class="card__icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 5l17 9v20l-17 9-17-9V14z"/><path d="M7 14l17 9 17-9M24 23v20"/></svg>
+        <h3>IT &amp; management consulting</h3>
+        <p>Helping organizations use technology to gain efficiency and digital growth, with expert guidance to improve performance and optimize operations.</p>
+      </article>
+      <article class="card spot reveal">
+        <span class="card__no">/05</span>
+        <svg class="card__icon" viewBox="0 0 48 48" aria-hidden="true"><circle cx="21" cy="21" r="13"/><path d="M31 31l11 11M15 21h12M21 15v12"/></svg>
+        <h3>UX research &amp; design</h3>
+        <p>Analyzing user behaviour to design user-centered products that are functional, engaging, intuitive and visually appealing.</p>
+      </article>
+      <article class="card spot reveal">
+        <span class="card__no">/06</span>
+        <svg class="card__icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 40V8M6 40h36M12 32l9-10 7 6 12-16"/><path d="M33 12h7v7"/></svg>
+        <h3>Mobile &amp; social marketing</h3>
+        <p>Mobile-focused strategies and social campaigns that raise visibility, grow brand awareness and drive conversions.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="section" id="experience">
+  <div class="wrap">
+    <header class="head reveal">
+      <span class="head__no">03</span>
+      <h2 class="head__title scramble-in" data-text="Experience">Experience</h2>
+    </header>
+
+    <ol class="timeline" id="timeline">
+      <li class="job job--now reveal">
+        <div class="job__when"><span class="live">Now</span>Jul 2023 — Present</div>
+        <div class="job__body"><h3>Co-Founder &amp; Executive Director</h3><p class="job__co">Quarizm Solutions</p>
+        <p>Leading the strategic direction of Quarizm Solutions, managing operations, growing partnerships, and driving the company toward innovation in software development, digital transformation and business solutions.</p></div>
+      </li>
+      <li class="job job--now reveal">
+        <div class="job__when"><span class="live">Now</span>Jul 2023 — Present</div>
+        <div class="job__body"><h3>Software Engineering Manager</h3><p class="job__co">FITXPERT</p>
+        <p>Developing and enhancing the company’s online training platform — modern interfaces, better performance and new features for coaches and trainees, with a focus on stability, user experience and features that match real user needs.</p></div>
+      </li>
+      <li class="job reveal">
+        <div class="job__when">Oct 2019 — Oct 2022</div>
+        <div class="job__body"><h3>Senior iOS &amp; Flutter Developer</h3><p class="job__co">Tocaan · Part time</p>
+        <p>A software house where I built many beautiful apps alongside a sharp design and engineering team.</p></div>
+      </li>
+      <li class="job reveal">
+        <div class="job__when">Oct 2019 — Mar 2021</div>
+        <div class="job__body"><h3>iOS Team Leader</h3><p class="job__co">Panorama alQassim · KSA</p>
+        <p>Managed an excellent iOS team at a large Saudi software house.</p></div>
+      </li>
+      <li class="job reveal">
+        <div class="job__when">Feb 2020 — May 2020</div>
+        <div class="job__body"><h3>iOS Native Instructor</h3><p class="job__co">Scope</p>
+        <p>Hands-on training in native iOS development — Swift, UIKit and mobile fundamentals — guiding trainees through building real applications and software best practices.</p></div>
+      </li>
+      <li class="job reveal">
+        <div class="job__when">Dec 2018 — Oct 2019</div>
+        <div class="job__body"><h3>iOS Developer</h3><p class="job__co">i3gaz</p>
+        <p>Built and maintained iOS applications, delivering stable features and a better user experience, and integrating APIs with the backend team.</p></div>
+      </li>
+      <li class="job reveal">
+        <div class="job__when">Apr 2018 — Dec 2018</div>
+        <div class="job__body"><h3>iOS Developer</h3><p class="job__co">Extra4IT</p>
+        <p>Developed multiple iOS apps including e-commerce and service-based systems — UI implementation, API integration and performance work.</p></div>
+      </li>
+      <li class="job reveal">
+        <div class="job__when">Nov 2016 — Jan 2017</div>
+        <div class="job__body"><h3>Android Developer</h3><p class="job__co">Yackeen Solutions</p>
+        <p>Android UI, API integration and performance in a fast-paced startup building solid software products.</p></div>
+      </li>
+      <li class="job reveal">
+        <div class="job__when">Jun 2013 — Dec 2013</div>
+        <div class="job__body"><h3>Desktop App Developer</h3><p class="job__co">Planet Connection</p>
+        <p>Windows desktop software that helps businesses run their operations — database design, UI and application logic. Where it all started.</p></div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- BIG TEXT -->
+<div class="bigtext" aria-hidden="true"><div class="bigtext__row" id="bigtext">SHIP · LEAD · SCALE · SHIP · LEAD · SCALE · SHIP · LEAD · SCALE ·</div></div>
+
+<!-- WORK -->
+<section class="section section--alt" id="work">
+  <div class="wrap">
+    <header class="head reveal">
+      <span class="head__no">04</span>
+      <h2 class="head__title scramble-in" data-text="Selected work">Selected work</h2>
+    </header>
+    <div class="work">
+      <a class="project tilt reveal" href="http://onelink.to/htrdry" target="_blank" rel="noopener">
+        <div class="project__img"><img src="assets/itrainer.webp" alt="iTrainer app" loading="lazy" width="1200" height="675"></div>
+        <div class="project__meta"><h3>iTrainer</h3><p>Project management · iOS development</p><span class="project__go">Open ↗</span></div>
+      </a>
+      <a class="project tilt reveal" href="https://apps.apple.com/us/app/cookery-%D9%83%D9%88%D9%83%D9%8A%D8%B1%D9%8A/id1612053430" target="_blank" rel="noopener">
+        <div class="project__img"><img src="assets/cookery.webp" alt="Cookery app" loading="lazy" width="1200" height="675"></div>
+        <div class="project__meta"><h3>Cookery</h3><p>Project management · iOS development</p><span class="project__go">App Store ↗</span></div>
+      </a>
+      <a class="project tilt reveal" href="https://apple.co/3GYc3Kl" target="_blank" rel="noopener">
+        <div class="project__img"><img src="assets/fusha.webp" alt="Fusha e-learning app" loading="lazy" width="1200" height="676"></div>
+        <div class="project__meta"><h3>Fusha E-learning</h3><p>Project management</p><span class="project__go">App Store ↗</span></div>
+      </a>
+      <a class="project tilt reveal" href="https://salahseleemteam.com/" target="_blank" rel="noopener">
+        <div class="project__img"><img src="assets/sst.webp" alt="SST website" loading="lazy" width="1200" height="675"></div>
+        <div class="project__meta"><h3>SST Website</h3><p>Project management</p><span class="project__go">Visit ↗</span></div>
+      </a>
+      <a class="project tilt reveal" href="http://egygool.com/" target="_blank" rel="noopener">
+        <div class="project__img"><img src="assets/egygool.webp" alt="Egygool football platform" loading="lazy" width="1200" height="675"></div>
+        <div class="project__meta"><h3>Egygool</h3><p>Football platform</p><span class="project__go">Visit ↗</span></div>
+      </a>
+      <a class="project tilt reveal" href="https://mahd-eldahab.quarizm.online/" target="_blank" rel="noopener">
+        <div class="project__img"><img src="assets/mahd.webp" alt="Mahd Eldahab jewellery store" loading="lazy" width="910" height="792"></div>
+        <div class="project__meta"><h3>Mahd Eldahab</h3><p>Jewellery storefront · Quarizm</p><span class="project__go">Visit ↗</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- TALKS + VIDEOS -->
+<section class="section" id="talks">
+  <div class="wrap">
+    <header class="head reveal">
+      <span class="head__no">05</span>
+      <h2 class="head__title scramble-in" data-text="Talks & videos">Talks &amp; videos</h2>
+    </header>
+
+    <div class="talks">
+      <article class="talk reveal">
+        <div class="talk__img"><img src="assets/talk-takeoff.webp" alt="Mohamed Lotfy speaking at Take Off" loading="lazy" width="900" height="903"></div>
+        <div><h3>Passionate about technology</h3><p>For anyone passionate about technology and building things — especially mobile apps — or studying software engineering.</p></div>
+      </article>
+      <article class="talk reveal">
+        <div class="talk__img"><img src="assets/talk-gdsc.webp" alt="Mohamed Lotfy giving an iOS development session" loading="lazy" width="900" height="900"></div>
+        <div><h3>iOS development</h3><p>What iOS is, why it exists, how to get started, careers and finding work, what happens when an app is created, and development advice.</p></div>
+      </article>
+    </div>
+
+    <div class="videos">
+      <a class="video spot reveal" target="_blank" rel="noopener" href="https://player.vimeo.com/progressive_redirect/playback/781984335/rendition/720p/file.mp4?loc=external&amp;oauth2_token_id=1516343399&amp;signature=b3be9de75269032af6f9ce5233c878b647df8fe1a9393cbf53c6aa172b20e2c7"><span class="video__play" aria-hidden="true"></span><span class="video__t">Why software?</span></a>
+      <a class="video spot reveal" target="_blank" rel="noopener" href="https://player.vimeo.com/progressive_redirect/playback/781986441/rendition/720p/file.mp4?loc=external&amp;oauth2_token_id=1516343399&amp;signature=520b8c2b8d5bafe6a80a66cfd2a88bb6d0e6634e5b5fe254a8feab3044647fd9"><span class="video__play" aria-hidden="true"></span><span class="video__t">SST is an example</span></a>
+      <a class="video spot reveal" target="_blank" rel="noopener" href="https://player.vimeo.com/progressive_redirect/playback/781988611/rendition/720p/file.mp4?loc=external&amp;oauth2_token_id=1516343399&amp;signature=5da8e1129d4330a2afd894604d362c6956f55a4fd3b5a5e48cd0c25e79d33ebf"><span class="video__play" aria-hidden="true"></span><span class="video__t">How should you start with any software?</span></a>
+      <a class="video spot reveal" target="_blank" rel="noopener" href="https://player.vimeo.com/progressive_redirect/playback/1143299835/rendition/720p/file.mp4?loc=external&amp;oauth2_token_id=1516343399&amp;signature=a3e2d1d2ed8b5ec77f5d204bec4687146ef5e962258a26bf5abc566567f05763"><span class="video__play" aria-hidden="true"></span><span class="video__t">If you’re a startup owner</span></a>
+    </div>
+
+    <div class="quotes">
+      <figure class="quote reveal">
+        <blockquote>I rarely come across real talents who stand out like Mohamed. His ability to handle multiple projects was unlike any I’ve seen before. No matter how tense a meeting, Mohamed made sure everyone left with a smile. As a team member or a leader, Mohamed earns my highest recommendation.</blockquote>
+        <figcaption><img src="assets/ali.webp" alt="" width="200" height="200" loading="lazy"><span><b>Ali Hamed</b>Senior iOS Engineer at Robusta Studio</span></figcaption>
+      </figure>
+      <figure class="quote reveal">
+        <blockquote>An outstanding developer who seeks to solve problems all the time, not just in his specific field of work. If I can describe him in a phrase: he is a problem solver.</blockquote>
+        <figcaption><img src="assets/omar.webp" alt="" width="200" height="200" loading="lazy"><span><b>Omar Sakr</b>Android Engineer at Foodics</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact" id="contact">
+  <div class="contact__grid" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="tag reveal"><span class="pulse"></span>Have something in mind?</p>
+    <h2 class="contact__title split">Let’s build it together.</h2>
+
+    <div class="contact__cols">
+      <div class="contact__info reveal">
+        <a class="contact__mail" href="mailto:mohamed_lotfy@codebase-tech.com">mohamed_lotfy@codebase-tech.com</a>
+        <a class="contact__phone" href="tel:+201553968880">+20 155 396 8880</a>
+        <ul class="social">
+          <li><a class="magnetic" href="https://www.linkedin.com/in/mohamed-lotfy-emara" target="_blank" rel="noopener">LinkedIn ↗</a></li>
+          <li><a class="magnetic" href="https://www.instagram.com/mo7mdlotfy/" target="_blank" rel="noopener">Instagram ↗</a></li>
+          <li><a class="magnetic" href="https://twitter.com/mohamedlotfy944" target="_blank" rel="noopener">Twitter ↗</a></li>
+          <li><a class="magnetic" href="https://www.facebook.com/mohamed.lotfy.33" target="_blank" rel="noopener">Facebook ↗</a></li>
+        </ul>
+      </div>
+
+      <form class="form reveal" id="form" novalidate>
+        <label><span>Name</span><input name="name" type="text" autocomplete="name" required></label>
+        <label><span>Email</span><input name="email" type="email" autocomplete="email" required></label>
+        <label><span>Subject</span><input name="subject" type="text" required></label>
+        <label><span>Message</span><textarea name="message" rows="4" required></textarea></label>
+        <button class="btn btn--solid magnetic" type="submit"><span>Send message</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <p class="form__note" id="formNote" role="status"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__in">
+    <span>© <span id="year"></span> Mohamed Lotfy</span>
+    <span class="footer__mono">lotfy.me — built to ship</span>
+    <a href="#top">Back to top ↑</a>
+  </div>
+</footer>
+
+<script src="js/main.js" defer></script>
+</body>
+</html>
