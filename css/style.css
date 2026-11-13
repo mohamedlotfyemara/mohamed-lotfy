@@ -465,3 +465,13 @@ ol, ul { margin: 0; padding: 0; list-style: none; }
 .pos:hover h3 { color: var(--accent); }
 [dir="rtl"] .pos h3 { line-height: 1.4; }
 [dir="rtl"] .pos:hover { background: linear-gradient(270deg, rgba(200, 255, 62, .06), transparent); }
+
+/* five stats */
+.stats { grid-template-columns: repeat(5, 1fr); }
+.stat b { font-size: clamp(38px, 5vw, 70px); }
+@media (max-width: 1000px) {
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .stat { border-bottom: 1px solid var(--line); padding-bottom: 24px; }
+  .stat:last-child { grid-column: 1 / -1; }
+}
+[dir="rtl"] .stat b em:not([data-ar]) { font-size: 1em; margin-inline-start: 0; }
