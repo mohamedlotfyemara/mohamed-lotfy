@@ -96,8 +96,8 @@
 
   /* ---------- Typed roles ---------- */
   const ROLES = {
-    en: ['startups from zero.', 'businesses that turn a profit.', 'companies that scale.', 'teams that deliver.'],
-    ar: ['شركات ناشئة من الصفر.', 'مشاريع تربح.', 'شركات تكبر وتتوسّع.', 'فرق عمل تنجز.']
+    en: ['profitable companies.', 'startups that scale.', 'brands that sell.', 'businesses that run without you.'],
+    ar: ['شركات رابحة.', 'مشاريع تتوسّع.', 'علامات تجارية تبيع.', 'أعمال تدير نفسها.']
   };
   const typed = $('#typed');
   function typeLoop() {
@@ -190,7 +190,7 @@
     el.innerHTML = text.split(/\s+/).map((w, i) =>
       `<span class="w" aria-hidden="true"><span style="--i:${i}">${w}</span></span>`).join(' ');
   }
-  $$('.cards, .work, .videos, .stats, .talks, .quotes').forEach(group =>
+  $$('.cards, .work, .videos, .stats, .talks, .quotes, .pains, .offers, .why, .steps, .faq').forEach(group =>
     [...group.children].forEach((c, i) => c.style.setProperty('--d', (i % 3) * 0.09 + 's')));
 
   const io = new IntersectionObserver(entries => {
@@ -219,6 +219,7 @@
   /* ---------- Scroll-driven: progress, nav, timeline, big text ---------- */
   const progress = $('#progress'), nav = $('#nav'), timeline = $('#timeline'), bigtext = $('#bigtext');
   const sections = $$('main section[id]');
+  const contact = $('#contact'), stickyCta = $('#stickyCta');
   const links = $$('.nav__links a[href^="#"]');
   let lastY = 0, ticking = false;
   function onScroll() {
@@ -234,6 +235,10 @@
     const br = bigtext.getBoundingClientRect();
     if (br.top < vh && br.bottom > 0 && !reduced)
       bigtext.style.transform = `translateX(${-(vh - br.top) * 0.35}px)`;
+
+    // Floating booking button: shown after the hero, hidden over the form.
+    const hb = hero.getBoundingClientRect(), cb = contact.getBoundingClientRect();
+    stickyCta.classList.toggle('is-on', hb.bottom < 0 && cb.top > vh * 0.6);
 
     let current = '';
     sections.forEach(s => { if (s.getBoundingClientRect().top < vh * 0.4) current = s.id; });
@@ -290,7 +295,7 @@
       tx = e.clientX; ty = e.clientY;
       dot.style.transform = `translate(${tx}px, ${ty}px)`;
       document.body.classList.add('has-cursor');
-      cur.classList.toggle('is-hover', !!e.target.closest('a, button, .tilt, input, textarea'));
+      cur.classList.toggle('is-hover', !!e.target.closest('a, button, .tilt, input, textarea, select, summary'));
     }, { passive: true });
     document.addEventListener('pointerleave', () => document.body.classList.remove('has-cursor'));
     (function follow() {
@@ -303,7 +308,22 @@
   /* ---------- Topic shortcuts: preselect the form topic ---------- */
   $$('[data-topic]').forEach(el => el.addEventListener('click', () => {
     $('#f-topic').value = el.dataset.topic;
+    track('cta', { topic: el.dataset.topic });
   }));
+
+  /* ---------- Ad tracking (fires only if Meta Pixel / Google tag / TikTok pixel are on the page) ---------- */
+  function track(kind, data) {
+    try {
+      if (kind === 'lead') {
+        window.fbq && window.fbq('track', 'Lead', data);
+        window.gtag && window.gtag('event', 'generate_lead', data);
+        window.ttq && window.ttq.track('SubmitForm', data);
+      } else {
+        window.fbq && window.fbq('trackCustom', 'CTAClick', data);
+        window.gtag && window.gtag('event', 'cta_click', data);
+      }
+    } catch (e) {}
+  }
 
   /* ---------- Contact form → Google Sheet ---------- */
   // Paste the Google Apps Script web app URL here (see google-apps-script/README.md).
@@ -311,7 +331,7 @@
   const SHEET_ENDPOINT = '';
   const CONTACT_EMAIL = 'consult@lotfy.me';
   const MSG = {
-    invalid: { en: '> please fill in every field, with a valid email and phone number.', ar: 'يرجى تعبئة جميع الحقول والتأكد من البريد الإلكتروني ورقم الجوال.' },
+    invalid: { en: '> please add your name, a valid phone number and email.', ar: 'يرجى كتابة الاسم ورقم جوال وبريد إلكتروني صحيحين.' },
     sending: { en: '> sending…', ar: 'جارٍ الإرسال…' },
     sent: { en: '> received. I will get back to you soon.', ar: 'تم استلام طلبك، وسأتواصل معك قريبًا.' },
     failed: { en: '> could not send. Please try again, or write to ' + CONTACT_EMAIL, ar: 'تعذّر الإرسال. حاول مرة أخرى أو راسلني على ' + CONTACT_EMAIL }
@@ -335,6 +355,7 @@
       const res = await fetch(SHEET_ENDPOINT, { method: 'POST', body: data });
       const out = await res.json();
       if (!out.ok) throw new Error('rejected');
+      track('lead', { topic: d.get('topic'), stage: d.get('stage') });
       form.reset();
       say('sent');
     } catch (err) {
