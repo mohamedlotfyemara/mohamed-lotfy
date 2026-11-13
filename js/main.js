@@ -321,6 +321,25 @@
     })();
   }
 
+  /* ---------- Booking buttons: land exactly on the form, below the fixed header ---------- */
+  function goToForm() {
+    const formEl = $('#form');
+    formEl.classList.add('is-in'); // drop the reveal offset so we measure its real spot
+    const target = () => formEl.getBoundingClientRect().top + scrollY - nav.offsetHeight - 16;
+    scrollTo({ top: target(), behavior: reduced ? 'auto' : 'smooth' });
+    // Layout can still shift while scrolling (counters, images); correct once it settles.
+    setTimeout(() => {
+      const off = formEl.getBoundingClientRect().top - nav.offsetHeight - 16;
+      if (Math.abs(off) > 8) scrollTo({ top: scrollY + off, behavior: 'smooth' });
+      if (finePointer) $('#f-name').focus({ preventScroll: true });
+    }, 900);
+  }
+  $$('a[href="#form"]').forEach(a => a.addEventListener('click', e => {
+    e.preventDefault();
+    setMenu(false);
+    goToForm();
+  }));
+
   /* ---------- Topic shortcuts: preselect the form topic ---------- */
   $$('[data-topic]').forEach(el => el.addEventListener('click', () => {
     $('#f-stage').value = el.dataset.topic;

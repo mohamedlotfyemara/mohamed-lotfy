@@ -712,6 +712,10 @@ ol, ul { margin: 0; padding: 0; list-style: none; }
 }
 .trust { gap: 10px 24px; }
 
+/* booking buttons land on the form, clear of the fixed header */
+#form { scroll-margin-top: 110px; }
+@media (max-width: 860px) { #form { scroll-margin-top: 90px; } }
+
 
 /* ================= Brown edition: light latte sections ================= */
 .section--alt {
