@@ -9,8 +9,8 @@
   --accent: #c8ff3e;
   --accent-2: #3ee6ff;
   --accent-ink: #0a0f02;
-  --display: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
-  --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --display: "Space Grotesk", "IBM Plex Sans Arabic", "Segoe UI", system-ui, sans-serif;
+  --mono: "JetBrains Mono", "IBM Plex Sans Arabic", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
   --ease: cubic-bezier(.2, .8, .2, 1);
   --gutter: clamp(16px, 4vw, 48px);
 }
@@ -394,3 +394,60 @@ ol, ul { margin: 0; padding: 0; list-style: none; }
   .reveal, .split .w > span { opacity: 1; transform: none; }
   .marquee__track { animation: none; }
 }
+
+/* ---------- Language toggle ---------- */
+.nav__links { margin-inline-start: auto; }
+.lang { position: relative; z-index: 2; margin-inline-start: clamp(12px, 2vw, 24px); height: 36px; padding: 0 14px; border-radius: 999px; border: 1px solid var(--line-2); background: none; color: var(--text); font: 500 13px var(--mono); cursor: pointer; transition: border-color .25s, color .25s; }
+.lang:hover { border-color: var(--accent); color: var(--accent); }
+@media (max-width: 860px) {
+  .lang { margin-inline-start: auto; height: 44px; }
+  .nav__toggle { margin-inline-start: 10px; }
+}
+
+/* ---------- Arabic / RTL ---------- */
+[dir="rtl"] * { letter-spacing: 0 !important; }
+[dir="rtl"] .marquee, [dir="rtl"] .bigtext, [dir="rtl"] .boot { direction: ltr; }
+[dir="rtl"] .hero__title { line-height: 1.2; margin-block: 14px 22px; }
+[dir="rtl"] .line--accent { color: var(--accent); -webkit-text-stroke: 0; }
+[dir="rtl"] .head__title { line-height: 1.3; }
+[dir="rtl"] .contact__title { line-height: 1.25; }
+[dir="rtl"] .about__big { line-height: 1.5; }
+[dir="rtl"] .stat b { line-height: 1.2; }
+[dir="rtl"] .stat b em { font-size: .4em; margin-inline-start: .25em; }
+[dir="rtl"] .nav__links a i { margin-right: 0; margin-left: 6px; }
+[dir="rtl"] .head__no::after { margin-left: 0; margin-right: 12px; }
+[dir="rtl"] .btn svg { transform: scaleX(-1); }
+[dir="rtl"] .btn:hover svg { transform: scaleX(-1) translateX(4px); }
+[dir="rtl"] .caret { margin-left: 0; margin-right: 3px; }
+[dir="rtl"] .chip::before { margin-right: 0; margin-left: 8px; }
+[dir="rtl"] .chip--a { left: auto; right: -11%; }
+[dir="rtl"] .chip--b { right: auto; left: -9%; }
+[dir="rtl"] .chip--c { left: auto; right: -6%; }
+[dir="rtl"] .stat { border-right: 0; border-left: 1px solid var(--line); }
+[dir="rtl"] .stat:first-child { padding-left: 22px; padding-right: 0; }
+[dir="rtl"] .stat:last-child { border-left: 0; }
+[dir="rtl"] .card__no { right: auto; left: 26px; }
+[dir="rtl"] .card::after { transform-origin: 100% 50%; }
+[dir="rtl"] .timeline::before, [dir="rtl"] .timeline::after { left: auto; right: 230px; }
+[dir="rtl"] .job::before { left: auto; right: 225px; }
+[dir="rtl"] .job:hover { background: linear-gradient(270deg, transparent, rgba(200, 255, 62, .045)); }
+[dir="rtl"] .job__when { padding-right: 0; padding-left: 20px; }
+[dir="rtl"] .live { margin-right: 0; margin-left: 10px; }
+[dir="rtl"] .job__body { padding-left: 0; padding-right: clamp(28px, 5vw, 64px); }
+[dir="rtl"] .job:hover h3 { transform: translateX(-8px); }
+[dir="rtl"] .quote::before { right: auto; left: 26px; }
+@media (max-width: 860px) {
+  [dir="rtl"] .nav__links { clip-path: circle(0 at 40px 40px); }
+  [dir="rtl"] .menu-open .nav__links { clip-path: circle(150% at 40px 40px); }
+  [dir="rtl"] .nav__links a i { margin-left: 12px; }
+  [dir="rtl"] .hero__visual { margin-left: 0; margin-right: 10px; }
+  [dir="rtl"] .chip--a { right: auto; left: -62%; }
+  [dir="rtl"] .stat, [dir="rtl"] .stat:first-child { padding-left: 16px; padding-right: 16px; }
+  [dir="rtl"] .stat:nth-child(odd) { padding-right: 0; }
+  [dir="rtl"] .stat:nth-child(even) { border-left: 0; }
+  [dir="rtl"] .timeline::before, [dir="rtl"] .timeline::after { right: 5px; }
+  [dir="rtl"] .job { padding-left: 0; padding-right: 30px; }
+  [dir="rtl"] .job::before { right: 0; }
+  [dir="rtl"] .job__body { padding-right: 0; }
+}
+[dir="rtl"] .contact__phone { direction: ltr; text-align: right; }

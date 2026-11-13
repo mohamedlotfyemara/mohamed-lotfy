@@ -9,10 +9,40 @@
 
   $('#year').textContent = new Date().getFullYear();
 
+  /* ---------- Language (English / Arabic) ---------- */
+  const TITLES = {
+    en: document.title,
+    ar: 'محمد لطفي — أبني الشركات الناشئة من الصفر إلى الربح والتوسّع'
+  };
+  const langBtn = $('#langToggle');
+  let lang = 'en';
+  function applyLang(l) {
+    lang = l;
+    const root = document.documentElement;
+    root.lang = l;
+    root.dir = l === 'ar' ? 'rtl' : 'ltr';
+    $$('[data-ar]').forEach(el => {
+      if (el.dataset.en === undefined) el.dataset.en = el.innerHTML;
+      el.innerHTML = l === 'ar' ? el.dataset.ar : el.dataset.en;
+      if (el.classList.contains('split')) splitEl(el);
+      if (el.dataset.text !== undefined) el.dataset.text = el.textContent;
+    });
+    langBtn.textContent = l === 'ar' ? 'EN' : 'العربية';
+    langBtn.setAttribute('aria-label', l === 'ar' ? 'Switch to English' : 'التبديل إلى العربية');
+    document.title = TITLES[l];
+  }
+  let saved = null;
+  try { saved = localStorage.getItem('lang'); } catch (e) {}
+  applyLang(saved === 'ar' || saved === 'en' ? saved : ((navigator.language || '').startsWith('ar') ? 'ar' : 'en'));
+  langBtn.addEventListener('click', () => {
+    applyLang(lang === 'ar' ? 'en' : 'ar');
+    try { localStorage.setItem('lang', lang); } catch (e) {}
+  });
+
   /* ---------- Text scramble ---------- */
   const GLYPHS = '!<>-_\\/[]{}=+*^?#01';
   function scramble(el, text, duration = 900) {
-    if (reduced) { el.textContent = text; return; }
+    if (reduced || lang === 'ar') { el.textContent = text; return; }
     const start = performance.now();
     const offsets = [...text].map((_, i) => (i / text.length) * 0.6 + Math.random() * 0.15);
     (function frame(now) {
@@ -65,18 +95,22 @@
   }
 
   /* ---------- Typed roles ---------- */
-  const roles = ['startups from zero.', 'businesses that turn a profit.', 'companies that scale.', 'teams that deliver.'];
+  const ROLES = {
+    en: ['startups from zero.', 'businesses that turn a profit.', 'companies that scale.', 'teams that deliver.'],
+    ar: ['شركات ناشئة من الصفر.', 'أعمالًا تحقق أرباحًا.', 'شركات تتوسّع.', 'فرقًا تُنجز.']
+  };
   const typed = $('#typed');
   function typeLoop() {
-    if (reduced) { typed.textContent = roles[0]; return; }
+    if (reduced) { typed.textContent = ROLES[lang][0]; return; }
     let r = 0, i = 0, del = false;
     (function step() {
-      const word = roles[r];
+      const list = ROLES[lang];
+      const word = list[r % list.length];
       i += del ? -1 : 1;
       typed.textContent = word.slice(0, i);
       let wait = del ? 28 : 55 + Math.random() * 40;
-      if (!del && i === word.length) { del = true; wait = 1700; }
-      else if (del && i === 0) { del = false; r = (r + 1) % roles.length; wait = 300; }
+      if (!del && i >= word.length) { del = true; wait = 1700; }
+      else if (del && i <= 0) { del = false; i = 0; r = (r + 1) % list.length; wait = 300; }
       setTimeout(step, wait);
     })();
   }
@@ -150,12 +184,12 @@
   });
 
   /* ---------- Reveal on scroll ---------- */
-  $$('.split').forEach(el => {
-    const words = el.textContent.trim().split(/\s+/);
-    el.setAttribute('aria-label', el.textContent.trim());
-    el.innerHTML = words.map((w, i) =>
+  function splitEl(el) {
+    const text = el.textContent.trim();
+    el.setAttribute('aria-label', text);
+    el.innerHTML = text.split(/\s+/).map((w, i) =>
       `<span class="w" aria-hidden="true"><span style="--i:${i}">${w}</span></span>`).join(' ');
-  });
+  }
   $$('.cards, .work, .videos, .stats, .talks, .quotes').forEach(group =>
     [...group.children].forEach((c, i) => c.style.setProperty('--d', (i % 3) * 0.09 + 's')));
 
@@ -277,10 +311,10 @@
   const form = $('#form'), note = $('#formNote');
   form.addEventListener('submit', e => {
     e.preventDefault();
-    if (!form.checkValidity()) { note.textContent = '> please fill in every field with a valid email.'; form.reportValidity(); return; }
+    if (!form.checkValidity()) { note.textContent = lang === 'ar' ? 'من فضلك املأ كل الحقول ببريد إلكتروني صحيح.' : '> please fill in every field with a valid email.'; form.reportValidity(); return; }
     const d = new FormData(form);
     const body = `${d.get('message')}\n\n— ${d.get('name')} (${d.get('email')})`;
     location.href = `mailto:mohamed_lotfy@codebase-tech.com?subject=${encodeURIComponent(d.get('topic') + ' — ' + d.get('name'))}&body=${encodeURIComponent(body)}`;
-    note.textContent = '> opening your mail app to send…';
+    note.textContent = lang === 'ar' ? 'جارٍ فتح تطبيق البريد للإرسال…' : '> opening your mail app to send…';
   });
 })();

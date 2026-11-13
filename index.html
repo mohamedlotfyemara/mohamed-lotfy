@@ -13,7 +13,7 @@
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="is-booting">
@@ -37,13 +37,14 @@
     <span class="nav__mark">ML</span><span class="nav__name">lotfy<b>.me</b></span>
   </a>
   <nav class="nav__links" id="navLinks" aria-label="Primary">
-    <a href="#about"><i>01</i>About</a>
-    <a href="#services"><i>02</i>How I build</a>
-    <a href="#experience"><i>03</i>Experience</a>
-    <a href="#work"><i>04</i>Work</a>
-    <a href="#talks"><i>05</i>Talks</a>
-    <a class="nav__cta" href="#contact">Let’s build</a>
+    <a href="#about" data-ar="&lt;i&gt;01&lt;/i&gt;نبذة"><i>01</i>About</a>
+    <a href="#services" data-ar="&lt;i&gt;02&lt;/i&gt;كيف أبني"><i>02</i>How I build</a>
+    <a href="#experience" data-ar="&lt;i&gt;03&lt;/i&gt;الخبرات"><i>03</i>Experience</a>
+    <a href="#work" data-ar="&lt;i&gt;04&lt;/i&gt;الأعمال"><i>04</i>Work</a>
+    <a href="#talks" data-ar="&lt;i&gt;05&lt;/i&gt;محاضرات"><i>05</i>Talks</a>
+    <a class="nav__cta" href="#contact" data-ar="لنبدأ">Let’s build</a>
   </nav>
+  <button class="lang" id="langToggle" type="button" aria-label="Switch language">العربية</button>
   <button class="nav__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
 </header>
 
@@ -56,16 +57,16 @@
 
   <div class="wrap hero__grid">
     <div class="hero__copy">
-      <p class="tag hero__tag"><span class="pulse"></span>General Manager · Comma Care &nbsp;//&nbsp; Co-Founder · Quarizm Solutions</p>
+      <p class="tag hero__tag" data-ar="&lt;span class=&quot;pulse&quot;&gt;&lt;/span&gt;المدير العام · Comma Care &amp;nbsp;//&amp;nbsp; شريك مؤسس · Quarizm Solutions"><span class="pulse"></span>General Manager · Comma Care &nbsp;//&nbsp; Co-Founder · Quarizm Solutions</p>
       <h1 class="hero__title">
-        <span class="line"><span class="scramble" data-text="MOHAMED">MOHAMED</span></span>
-        <span class="line line--accent"><span class="scramble" data-text="LOTFY." data-delay="250">LOTFY.</span></span>
+        <span class="line"><span class="scramble" data-text="MOHAMED" data-ar="محمد">MOHAMED</span></span>
+        <span class="line line--accent"><span class="scramble" data-text="LOTFY." data-delay="250" data-ar="لطفي.">LOTFY.</span></span>
       </h1>
-      <p class="hero__type"><span class="prompt">&gt;</span> I build <span id="typed"></span><span class="caret"></span></p>
-      <p class="hero__lead">I take a startup from the first idea to profit and scale: the business model, the team, the product and the growth. Technology is one part of the job. The business is the whole of it.</p>
+      <p class="hero__type"><span class="prompt">&gt;</span> <span data-ar="أبني">I build</span> <span id="typed"></span><span class="caret"></span></p>
+      <p class="hero__lead" data-ar="آخذ الشركة الناشئة من أول فكرة حتى الربح والتوسّع: نموذج العمل، الفريق، المنتج والنمو. الشركات الناشئة التي أشارك فيها اليوم تحقق 6 ملايين ريال سعودي سنويًا.">I take a startup from the first idea to profit and scale: the business model, the team, the product and the growth. The startups I’m part of today generate SAR 6 million a year.</p>
       <div class="hero__actions">
-        <a class="btn btn--solid magnetic" href="#contact"><span>Build your startup with me</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a class="btn btn--ghost magnetic" href="#contact" data-topic="Consultation"><span>Book a consultation</span></a>
+        <a class="btn btn--solid magnetic" href="#contact"><span data-ar="ابنِ شركتك الناشئة معي">Build your startup with me</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn--ghost magnetic" href="#contact" data-topic="Consultation"><span data-ar="احجز استشارة">Book a consultation</span></a>
       </div>
     </div>
 
@@ -78,21 +79,21 @@
         </div>
         <span class="hud hud--tl" aria-hidden="true"></span><span class="hud hud--tr" aria-hidden="true"></span>
         <span class="hud hud--bl" aria-hidden="true"></span><span class="hud hud--br" aria-hidden="true"></span>
-        <div class="chip chip--a">Idea → launch</div>
-        <div class="chip chip--b">Launch → profit</div>
-        <div class="chip chip--c">Profit → scale</div>
+        <div class="chip chip--a" data-ar="من الفكرة إلى الإطلاق">Idea → launch</div>
+        <div class="chip chip--b" data-ar="من الإطلاق إلى الربح">Launch → profit</div>
+        <div class="chip chip--c" data-ar="من الربح إلى التوسّع">Profit → scale</div>
       </div>
     </div>
   </div>
 
-  <a class="hero__scroll" href="#about" aria-label="Scroll to about"><span></span>scroll</a>
+  <a class="hero__scroll" href="#about" aria-label="Scroll to about" data-ar="&lt;span&gt;&lt;/span&gt;مرّر"><span></span>scroll</a>
 </section>
 
 <!-- MARQUEE -->
 <div class="marquee" aria-hidden="true">
   <div class="marquee__track">
-    <span>Startup Building</span><span>Business Strategy</span><span>Business Model</span><span>Go-to-Market</span><span>Business Development</span><span>Product</span><span>Team Building</span><span>Operations</span><span>Revenue</span><span>Scale</span><span>Consulting</span><span>Partnerships</span>
-    <span>Startup Building</span><span>Business Strategy</span><span>Business Model</span><span>Go-to-Market</span><span>Business Development</span><span>Product</span><span>Team Building</span><span>Operations</span><span>Revenue</span><span>Scale</span><span>Consulting</span><span>Partnerships</span>
+    <span data-ar="بناء الشركات الناشئة">Startup Building</span><span data-ar="استراتيجية الأعمال">Business Strategy</span><span data-ar="نموذج العمل">Business Model</span><span data-ar="دخول السوق">Go-to-Market</span><span data-ar="تطوير الأعمال">Business Development</span><span data-ar="المنتج">Product</span><span data-ar="بناء الفريق">Team Building</span><span data-ar="التشغيل">Operations</span><span data-ar="الإيرادات">Revenue</span><span data-ar="التوسّع">Scale</span><span data-ar="الاستشارات">Consulting</span><span data-ar="الشراكات">Partnerships</span>
+    <span data-ar="بناء الشركات الناشئة">Startup Building</span><span data-ar="استراتيجية الأعمال">Business Strategy</span><span data-ar="نموذج العمل">Business Model</span><span data-ar="دخول السوق">Go-to-Market</span><span data-ar="تطوير الأعمال">Business Development</span><span data-ar="المنتج">Product</span><span data-ar="بناء الفريق">Team Building</span><span data-ar="التشغيل">Operations</span><span data-ar="الإيرادات">Revenue</span><span data-ar="التوسّع">Scale</span><span data-ar="الاستشارات">Consulting</span><span data-ar="الشراكات">Partnerships</span>
   </div>
 </div>
 
@@ -101,43 +102,44 @@
   <div class="wrap">
     <header class="head reveal">
       <span class="head__no">01</span>
-      <h2 class="head__title scramble-in" data-text="About">About</h2>
+      <h2 class="head__title scramble-in" data-text="About" data-ar="نبذة عني">About</h2>
     </header>
     <div class="about">
-      <p class="about__big split">I build startups from scratch, all the way to profit and scale. I think like an owner first and an engineer second.</p>
+      <p class="about__big split" data-ar="أبني الشركات الناشئة من الصفر حتى الربح والتوسّع. أفكّر كصاحب عمل أولًا وكمهندس ثانيًا.">I build startups from scratch, all the way to profit and scale. I think like an owner first and an engineer second.</p>
       <div class="about__side">
-        <p class="reveal">I came up through engineering, then moved into running teams, and now run companies. That path means I can sit with a founder on the business model in the morning and with the developers on delivery in the afternoon.</p>
-        <p class="reveal">Today I am General Manager at <b>Comma Care</b> and Co-Founder &amp; Executive Director of <b>Quarizm Solutions</b>, and I work with founders as a consultant and partner.</p>
+        <p class="reveal" data-ar="بدأت مهندسًا، ثم انتقلت إلى قيادة الفرق، واليوم أدير شركات. هذا المسار يجعلني أجلس مع المؤسس على نموذج العمل صباحًا ومع المطوّرين على التنفيذ بعد الظهر.">I came up through engineering, then moved into running teams, and now run companies. That path means I can sit with a founder on the business model in the morning and with the developers on delivery in the afternoon.</p>
+        <p class="reveal" data-ar="اليوم أنا المدير العام في &lt;b&gt;Comma Care&lt;/b&gt; والشريك المؤسس والمدير التنفيذي في &lt;b&gt;Quarizm Solutions&lt;/b&gt;، وأعمل مع المؤسسين كمستشار وشريك. الشركات الناشئة التي أشارك فيها تحقق معًا 6 ملايين ريال سعودي سنويًا.">Today I am General Manager at <b>Comma Care</b> and Co-Founder &amp; Executive Director of <b>Quarizm Solutions</b>, and I work with founders as a consultant and partner. Together, the startups I’m part of generate SAR 6 million a year.</p>
       </div>
     </div>
 
     <div class="stats">
-      <div class="stat reveal"><b><span class="count" data-since="2013">0</span><em>+</em></b><span>years building software</span></div>
-      <div class="stat reveal"><b><span class="count" data-to="12">0</span></b><span>companies &amp; teams</span></div>
-      <div class="stat reveal"><b><span class="count" data-to="29">0</span></b><span>projects on my LinkedIn profile</span></div>
-      <div class="stat reveal"><b><span class="count" data-to="4">0</span></b><span>markets: Egypt, Saudi Arabia, UAE, Kuwait</span></div>
+      <div class="stat reveal"><b><span class="count" data-to="6">0</span><em data-ar="مليون">M</em></b><span data-ar="ريال سنويًا من الشركات الناشئة التي أشارك فيها">SAR a year across the startups I’m part of</span></div>
+      <div class="stat reveal"><b><span class="count" data-since="2013">0</span><em>+</em></b><span data-ar="سنة في بناء البرمجيات">years building software</span></div>
+      <div class="stat reveal"><b><span class="count" data-to="12">0</span></b><span data-ar="شركة وفريق">companies &amp; teams</span></div>
+      <div class="stat reveal"><b><span class="count" data-to="4">0</span></b><span data-ar="أسواق: مصر، السعودية، الإمارات، الكويت">markets: Egypt, Saudi Arabia, UAE, Kuwait</span></div>
     </div>
 
     <div class="now reveal">
-      <p class="tag"><span class="pulse"></span>Open for</p>
+      <p class="tag" data-ar="&lt;span class=&quot;pulse&quot;&gt;&lt;/span&gt;متاح الآن"><span class="pulse"></span>Open for</p>
       <div class="now__grid">
         <a class="now__item" href="#contact" data-topic="Building a startup">
-          <h3>Building startups</h3>
-          <p>Any startup, at any stage. I come in to build it with you from the first idea until it earns and grows.</p>
-          <span class="now__go">Let’s build ↗</span>
+          <h3 data-ar="بناء الشركات الناشئة">Building startups</h3>
+          <p data-ar="أي شركة ناشئة، في أي مرحلة. أدخل معك لنبنيها من أول فكرة حتى تربح وتكبر.">Any startup, at any stage. I come in to build it with you from the first idea until it earns and grows.</p>
+          <span class="now__go" data-ar="لنبنِ معًا ↖">Let’s build ↗</span>
         </a>
         <a class="now__item" href="#contact" data-topic="Consultation">
-          <h3>Consultations</h3>
-          <p>Any question about your business or product: the model, the plan, the team, the tech, the next move.</p>
-          <span class="now__go">Book a consultation ↗</span>
+          <h3 data-ar="الاستشارات">Consultations</h3>
+          <p data-ar="أي سؤال عن عملك أو منتجك: النموذج، الخطة، الفريق، التقنية، والخطوة القادمة.">Any question about your business or product: the model, the plan, the team, the tech, the next move.</p>
+          <span class="now__go" data-ar="احجز استشارة ↖">Book a consultation ↗</span>
         </a>
         <a class="now__item" href="#contact" data-topic="Collaboration or partnership">
-          <h3>Collaborations &amp; partnerships</h3>
-          <p>Joint ventures, co-building, business partnerships. If there is something we can build together, I want to hear it.</p>
-          <span class="now__go">Propose it ↗</span>
+          <h3 data-ar="التعاون والشراكات">Collaborations &amp; partnerships</h3>
+          <p data-ar="مشاريع مشتركة، بناء مشترك، شراكات أعمال. إن كان هناك ما يمكن أن نبنيه معًا، يهمّني أن أسمعه.">Joint ventures, co-building, business partnerships. If there is something we can build together, I want to hear it.</p>
+          <span class="now__go" data-ar="اعرض فكرتك ↖">Propose it ↗</span>
         </a>
       </div>
     </div>
+  </div>
 </section>
 
 <!-- SERVICES -->
@@ -145,44 +147,44 @@
   <div class="wrap">
     <header class="head reveal">
       <span class="head__no">02</span>
-      <h2 class="head__title scramble-in" data-text="From zero to scale">From zero to scale</h2>
+      <h2 class="head__title scramble-in" data-text="From zero to scale" data-ar="من الصفر إلى التوسّع">From zero to scale</h2>
     </header>
     <div class="cards">
       <article class="card spot reveal">
         <span class="card__no">/01</span>
         <svg class="card__icon" viewBox="0 0 48 48" aria-hidden="true"><circle cx="21" cy="21" r="13"/><path d="M31 31l11 11M15 21h12M21 15v12"/></svg>
-        <h3>Idea &amp; validation</h3>
-        <p>Test the idea against a real market before spending on it: who pays, for what, and why now.</p>
+        <h3 data-ar="الفكرة والتحقق منها">Idea &amp; validation</h3>
+        <p data-ar="اختبار الفكرة أمام سوق حقيقي قبل الإنفاق عليها: من سيدفع، مقابل ماذا، ولماذا الآن.">Test the idea against a real market before spending on it: who pays, for what, and why now.</p>
       </article>
       <article class="card spot reveal">
         <span class="card__no">/02</span>
         <svg class="card__icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M24 5l17 9v20l-17 9-17-9V14z"/><path d="M7 14l17 9 17-9M24 23v20"/></svg>
-        <h3>Business model</h3>
-        <p>How the company makes money. Pricing, unit economics, costs, and the numbers that have to work for it to survive.</p>
+        <h3 data-ar="نموذج العمل">Business model</h3>
+        <p data-ar="كيف تكسب الشركة. التسعير، اقتصاديات الوحدة، التكاليف، والأرقام التي يجب أن تنجح لتستمر الشركة.">How the company makes money. Pricing, unit economics, costs, and the numbers that have to work for it to survive.</p>
       </article>
       <article class="card spot reveal">
         <span class="card__no">/03</span>
         <svg class="card__icon" viewBox="0 0 48 48" aria-hidden="true"><rect x="14" y="5" width="20" height="38" rx="4"/><path d="M21 10h6M22 38h4"/></svg>
-        <h3>Product &amp; MVP</h3>
-        <p>Build the smallest product that proves the business, then ship it. This is where my engineering background does its work.</p>
+        <h3 data-ar="المنتج والنسخة الأولى">Product &amp; MVP</h3>
+        <p data-ar="بناء أصغر منتج يثبت نجاح الفكرة تجاريًا ثم إطلاقه. هنا تعمل خلفيتي الهندسية.">Build the smallest product that proves the business, then ship it. This is where my engineering background does its work.</p>
       </article>
       <article class="card spot reveal">
         <span class="card__no">/04</span>
         <svg class="card__icon" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="12" r="5"/><circle cx="10" cy="36" r="5"/><circle cx="38" cy="36" r="5"/><path d="M24 17v8M24 25L12 32M24 25l12 7"/></svg>
-        <h3>Team &amp; operations</h3>
-        <p>Hire the first team, set the process, and run the company day to day so delivery does not depend on one person.</p>
+        <h3 data-ar="الفريق والتشغيل">Team &amp; operations</h3>
+        <p data-ar="توظيف الفريق الأول، وضع نظام العمل، وإدارة الشركة يومًا بيوم حتى لا يعتمد التنفيذ على شخص واحد.">Hire the first team, set the process, and run the company day to day so delivery does not depend on one person.</p>
       </article>
       <article class="card spot reveal">
         <span class="card__no">/05</span>
         <svg class="card__icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 12h22M6 24h36M6 36h28"/><circle cx="34" cy="12" r="4"/><circle cx="40" cy="36" r="4"/></svg>
-        <h3>Go-to-market &amp; revenue</h3>
-        <p>Launch, find the first customers, build the sales and marketing engine, and get to revenue.</p>
+        <h3 data-ar="دخول السوق والإيرادات">Go-to-market &amp; revenue</h3>
+        <p data-ar="الإطلاق، الوصول لأول العملاء، بناء منظومة المبيعات والتسويق، وتحقيق الإيرادات.">Launch, find the first customers, build the sales and marketing engine, and get to revenue.</p>
       </article>
       <article class="card spot reveal">
         <span class="card__no">/06</span>
         <svg class="card__icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 40V8M6 40h36M12 32l9-10 7 6 12-16"/><path d="M33 12h7v7"/></svg>
-        <h3>Profit &amp; scale</h3>
-        <p>Turn revenue into profit, then grow: new markets, partnerships, and systems that hold up as the company gets bigger.</p>
+        <h3 data-ar="الربح والتوسّع">Profit &amp; scale</h3>
+        <p data-ar="تحويل الإيرادات إلى أرباح ثم النمو: أسواق جديدة، شراكات، وأنظمة تتحمّل كبر الشركة.">Turn revenue into profit, then grow: new markets, partnerships, and systems that hold up as the company gets bigger.</p>
       </article>
     </div>
   </div>
@@ -193,79 +195,79 @@
   <div class="wrap">
     <header class="head reveal">
       <span class="head__no">03</span>
-      <h2 class="head__title scramble-in" data-text="Experience">Experience</h2>
+      <h2 class="head__title scramble-in" data-text="Experience" data-ar="الخبرات">Experience</h2>
     </header>
 
     <ol class="timeline" id="timeline">
       <li class="job job--now reveal">
-        <div class="job__when"><span class="live">Now</span>Mar 2025 — Present</div>
-        <div class="job__body"><h3>General Manager</h3><p class="job__co">Comma Care · Full-time · Saudi Arabia · Hybrid</p>
-        <p>Running the company as General Manager.</p></div>
+        <div class="job__when" data-ar="&lt;span class=&quot;live&quot;&gt;الآن&lt;/span&gt;مارس 2025 — الآن"><span class="live">Now</span>Mar 2025 — Present</div>
+        <div class="job__body"><h3 data-ar="المدير العام">General Manager</h3><p class="job__co" data-ar="Comma Care · دوام كامل · السعودية · عمل هجين">Comma Care · Full-time · Saudi Arabia · Hybrid</p>
+        <p data-ar="إدارة الشركة بصفتي المدير العام.">Running the company as General Manager.</p></div>
       </li>
       <li class="job job--now reveal">
-        <div class="job__when"><span class="live">Now</span>Jul 2023 — Present</div>
-        <div class="job__body"><h3>Co-Founder &amp; Executive Director</h3><p class="job__co">Quarizm Solutions · Riyadh, Saudi Arabia</p>
-        <p>Leading the strategic direction of Quarizm Solutions, managing operations, growing partnerships, and driving the company toward innovation in software development, digital transformation and business solutions.</p></div>
+        <div class="job__when" data-ar="&lt;span class=&quot;live&quot;&gt;الآن&lt;/span&gt;يوليو 2023 — الآن"><span class="live">Now</span>Jul 2023 — Present</div>
+        <div class="job__body"><h3 data-ar="شريك مؤسس ومدير تنفيذي">Co-Founder &amp; Executive Director</h3><p class="job__co" data-ar="Quarizm Solutions · الرياض، السعودية">Quarizm Solutions · Riyadh, Saudi Arabia</p>
+        <p data-ar="أقود التوجّه الاستراتيجي لـ Quarizm Solutions، وأدير العمليات وأنمّي الشراكات، وأدفع الشركة نحو الابتكار في تطوير البرمجيات والتحول الرقمي وحلول الأعمال.">Leading the strategic direction of Quarizm Solutions, managing operations, growing partnerships, and driving the company toward innovation in software development, digital transformation and business solutions.</p></div>
       </li>
       <li class="job job--now reveal">
-        <div class="job__when"><span class="live">Now</span>Jan 2022 — Present</div>
-        <div class="job__body"><h3>Software Consultant</h3><p class="job__co">Self-employed · Egypt · Remote</p>
-        <p>If you already have a product, or are about to start one, I help with advice. SaaS and software solution development.</p></div>
+        <div class="job__when" data-ar="&lt;span class=&quot;live&quot;&gt;الآن&lt;/span&gt;يناير 2022 — الآن"><span class="live">Now</span>Jan 2022 — Present</div>
+        <div class="job__body"><h3 data-ar="مستشار برمجيات">Software Consultant</h3><p class="job__co" data-ar="عمل حر · مصر · عن بُعد">Self-employed · Egypt · Remote</p>
+        <p data-ar="إن كان لديك منتج قائم أو توشك أن تبدأ واحدًا، أساعدك بالمشورة. SaaS وتطوير الحلول البرمجية.">If you already have a product, or are about to start one, I help with advice. SaaS and software solution development.</p></div>
       </li>
       <li class="job reveal">
-        <div class="job__when">Jul 2023 — Jun 2025</div>
-        <div class="job__body"><h3>Software Engineering Manager</h3><p class="job__co">FITXPERT · Full-time · Cairo, Egypt</p>
-        <p>Developed and enhanced the company’s online training platform: modern interfaces, better performance and new features for coaches and trainees, with a focus on stability and user experience.</p></div>
+        <div class="job__when" data-ar="يوليو 2023 — يونيو 2025">Jul 2023 — Jun 2025</div>
+        <div class="job__body"><h3 data-ar="مدير هندسة البرمجيات">Software Engineering Manager</h3><p class="job__co" data-ar="FITXPERT · دوام كامل · القاهرة، مصر">FITXPERT · Full-time · Cairo, Egypt</p>
+        <p data-ar="طوّرت وحسّنت منصة التدريب الإلكترونية للشركة: واجهات حديثة، أداء أفضل وخصائص جديدة للمدربين والمتدربين، مع التركيز على الاستقرار وتجربة المستخدم.">Developed and enhanced the company’s online training platform: modern interfaces, better performance and new features for coaches and trainees, with a focus on stability and user experience.</p></div>
       </li>
       <li class="job reveal">
-        <div class="job__when">Aug 2021 — Jun 2025</div>
-        <div class="job__body"><h3>Software Engineering Manager</h3><p class="job__co">Codebase · Full-time</p>
-        <p>People management and mobile applications: setting requirements and schedules, delegating work, and keeping the team, management and clients aligned through delivery.</p></div>
+        <div class="job__when" data-ar="أغسطس 2021 — يونيو 2025">Aug 2021 — Jun 2025</div>
+        <div class="job__body"><h3 data-ar="مدير هندسة البرمجيات">Software Engineering Manager</h3><p class="job__co" data-ar="Codebase · دوام كامل">Codebase · Full-time</p>
+        <p data-ar="إدارة الأفراد وتطبيقات الجوال: تحديد المتطلبات والجداول، توزيع العمل، وإبقاء الفريق والإدارة والعملاء على توافق حتى التسليم.">People management and mobile applications: setting requirements and schedules, delegating work, and keeping the team, management and clients aligned through delivery.</p></div>
       </li>
       <li class="job reveal">
-        <div class="job__when">Mar 2021 — May 2025</div>
-        <div class="job__body"><h3>Software Engineering Manager</h3><p class="job__co">iTrainer · Full-time · Dubai, UAE · Remote</p>
-        <p>Led engineering for iTrainer, the diet and exercise AI app.</p></div>
+        <div class="job__when" data-ar="مارس 2021 — مايو 2025">Mar 2021 — May 2025</div>
+        <div class="job__body"><h3 data-ar="مدير هندسة البرمجيات">Software Engineering Manager</h3><p class="job__co" data-ar="iTrainer · دوام كامل · دبي، الإمارات · عن بُعد">iTrainer · Full-time · Dubai, UAE · Remote</p>
+        <p data-ar="قدت الفريق الهندسي لتطبيق iTrainer، تطبيق الحمية والتمارين بالذكاء الاصطناعي.">Led engineering for iTrainer, the diet and exercise AI app.</p></div>
       </li>
       <li class="job reveal">
-        <div class="job__when">Jan 2021 — Jun 2021</div>
-        <div class="job__body"><h3>Senior iOS Developer</h3><p class="job__co">iTrainer · Dubai, UAE</p>
-        <p>Joined iTrainer as Senior iOS Developer before moving into engineering management.</p></div>
+        <div class="job__when" data-ar="يناير 2021 — يونيو 2021">Jan 2021 — Jun 2021</div>
+        <div class="job__body"><h3 data-ar="مطوّر iOS أول">Senior iOS Developer</h3><p class="job__co" data-ar="iTrainer · دبي، الإمارات">iTrainer · Dubai, UAE</p>
+        <p data-ar="انضممت إلى iTrainer كمطوّر iOS أول قبل الانتقال إلى الإدارة الهندسية.">Joined iTrainer as Senior iOS Developer before moving into engineering management.</p></div>
       </li>
       <li class="job reveal">
-        <div class="job__when">Oct 2019 — Oct 2022</div>
-        <div class="job__body"><h3>Senior iOS &amp; Flutter Developer</h3><p class="job__co">Tocaan · Kuwait · Remote</p>
-        <p>A software house where I built many beautiful apps alongside a sharp design and engineering team.</p></div>
+        <div class="job__when" data-ar="أكتوبر 2019 — أكتوبر 2022">Oct 2019 — Oct 2022</div>
+        <div class="job__body"><h3 data-ar="مطوّر iOS و Flutter أول">Senior iOS &amp; Flutter Developer</h3><p class="job__co" data-ar="Tocaan · الكويت · عن بُعد">Tocaan · Kuwait · Remote</p>
+        <p data-ar="شركة برمجيات بنيت فيها تطبيقات جميلة كثيرة مع فريق تصميم وهندسة متميز.">A software house where I built many beautiful apps alongside a sharp design and engineering team.</p></div>
       </li>
       <li class="job reveal">
-        <div class="job__when">Oct 2019 — Mar 2021</div>
-        <div class="job__body"><h3>Senior iOS Developer</h3><p class="job__co">Panorama ALQassim · Saudi Arabia</p>
-        <p>Built iOS apps and managed an excellent team at a large Saudi software house.</p></div>
+        <div class="job__when" data-ar="أكتوبر 2019 — مارس 2021">Oct 2019 — Mar 2021</div>
+        <div class="job__body"><h3 data-ar="مطوّر iOS أول">Senior iOS Developer</h3><p class="job__co" data-ar="بانوراما القصيم · السعودية">Panorama ALQassim · Saudi Arabia</p>
+        <p data-ar="بنيت تطبيقات iOS وأدرت فريقًا ممتازًا في شركة برمجيات سعودية كبيرة.">Built iOS apps and managed an excellent team at a large Saudi software house.</p></div>
       </li>
       <li class="job reveal">
-        <div class="job__when">Feb 2020 — May 2020</div>
-        <div class="job__body"><h3>iOS Native Instructor</h3><p class="job__co">Scope · Mansoura, Egypt</p>
-        <p>Hands-on training in native iOS development (Swift, UIKit, mobile fundamentals), guiding trainees through building real applications.</p></div>
+        <div class="job__when" data-ar="فبراير 2020 — مايو 2020">Feb 2020 — May 2020</div>
+        <div class="job__body"><h3 data-ar="مدرّب iOS">iOS Native Instructor</h3><p class="job__co" data-ar="Scope · المنصورة، مصر">Scope · Mansoura, Egypt</p>
+        <p data-ar="تدريب عملي على تطوير iOS (Swift وUIKit وأساسيات الجوال)، مع توجيه المتدربين لبناء تطبيقات حقيقية.">Hands-on training in native iOS development (Swift, UIKit, mobile fundamentals), guiding trainees through building real applications.</p></div>
       </li>
       <li class="job reveal">
-        <div class="job__when">Dec 2018 — Oct 2019</div>
-        <div class="job__body"><h3>iOS Developer</h3><p class="job__co">i3gaz · Saudi Arabia</p>
-        <p>Built and maintained iOS applications, delivering stable features and integrating APIs with the backend team.</p></div>
+        <div class="job__when" data-ar="ديسمبر 2018 — أكتوبر 2019">Dec 2018 — Oct 2019</div>
+        <div class="job__body"><h3 data-ar="مطوّر iOS">iOS Developer</h3><p class="job__co" data-ar="إعجاز · السعودية">i3gaz · Saudi Arabia</p>
+        <p data-ar="بنيت وصنت تطبيقات iOS، مع تسليم خصائص مستقرة وربط الـ APIs مع فريق الخوادم.">Built and maintained iOS applications, delivering stable features and integrating APIs with the backend team.</p></div>
       </li>
       <li class="job reveal">
-        <div class="job__when">Apr 2018 — Dec 2018</div>
-        <div class="job__body"><h3>iOS Developer</h3><p class="job__co">Extra4it · Saudi Arabia</p>
-        <p>Developed multiple iOS apps including e-commerce and service-based systems: UI implementation, API integration and performance work.</p></div>
+        <div class="job__when" data-ar="أبريل 2018 — ديسمبر 2018">Apr 2018 — Dec 2018</div>
+        <div class="job__body"><h3 data-ar="مطوّر iOS">iOS Developer</h3><p class="job__co" data-ar="Extra4it · السعودية">Extra4it · Saudi Arabia</p>
+        <p data-ar="طوّرت عدة تطبيقات iOS منها متاجر إلكترونية وأنظمة خدمات: تنفيذ الواجهات، ربط الـ APIs وتحسين الأداء.">Developed multiple iOS apps including e-commerce and service-based systems: UI implementation, API integration and performance work.</p></div>
       </li>
       <li class="job reveal">
-        <div class="job__when">Nov 2016 — Jan 2017</div>
-        <div class="job__body"><h3>Android Developer</h3><p class="job__co">Yackeen Solutions · Cairo, Egypt</p>
-        <p>Android UI, API integration and performance in a fast-paced startup software house.</p></div>
+        <div class="job__when" data-ar="نوفمبر 2016 — يناير 2017">Nov 2016 — Jan 2017</div>
+        <div class="job__body"><h3 data-ar="مطوّر أندرويد">Android Developer</h3><p class="job__co" data-ar="Yackeen Solutions · القاهرة، مصر">Yackeen Solutions · Cairo, Egypt</p>
+        <p data-ar="واجهات أندرويد، ربط الـ APIs وتحسين الأداء في شركة برمجيات ناشئة سريعة الإيقاع.">Android UI, API integration and performance in a fast-paced startup software house.</p></div>
       </li>
       <li class="job reveal">
-        <div class="job__when">Jun 2013 — Dec 2013</div>
-        <div class="job__body"><h3>Desktop App Developer</h3><p class="job__co">Planet Connection</p>
-        <p>Windows desktop software for business operations: database design, UI and application logic. Where it all started.</p></div>
+        <div class="job__when" data-ar="يونيو 2013 — ديسمبر 2013">Jun 2013 — Dec 2013</div>
+        <div class="job__body"><h3 data-ar="مطوّر تطبيقات سطح المكتب">Desktop App Developer</h3><p class="job__co">Planet Connection</p>
+        <p data-ar="برمجيات سطح المكتب على ويندوز لإدارة عمليات الشركات: تصميم قواعد البيانات، الواجهات ومنطق التطبيق. من هنا بدأ كل شيء.">Windows desktop software for business operations: database design, UI and application logic. Where it all started.</p></div>
       </li>
     </ol>
   </div>
@@ -279,32 +281,32 @@
   <div class="wrap">
     <header class="head reveal">
       <span class="head__no">04</span>
-      <h2 class="head__title scramble-in" data-text="Selected work">Selected work</h2>
+      <h2 class="head__title scramble-in" data-text="Selected work" data-ar="أعمال مختارة">Selected work</h2>
     </header>
     <div class="work">
       <a class="project tilt reveal" href="http://onelink.to/htrdry" target="_blank" rel="noopener">
         <div class="project__img"><img src="assets/itrainer.webp" alt="iTrainer app" loading="lazy" width="1200" height="675"></div>
-        <div class="project__meta"><h3>iTrainer: Diet &amp; Exercise AI</h3><p>Engineering management · iOS development</p><span class="project__go">Open ↗</span></div>
+        <div class="project__meta"><h3 data-ar="iTrainer: الحمية والتمارين بالذكاء الاصطناعي">iTrainer: Diet &amp; Exercise AI</h3><p data-ar="إدارة هندسية · تطوير iOS">Engineering management · iOS development</p><span class="project__go" data-ar="افتح ↖">Open ↗</span></div>
       </a>
       <a class="project tilt reveal" href="https://apps.apple.com/us/app/cookery-%D9%83%D9%88%D9%83%D9%8A%D8%B1%D9%8A/id1612053430" target="_blank" rel="noopener">
         <div class="project__img"><img src="assets/cookery.webp" alt="Cookery app" loading="lazy" width="1200" height="675"></div>
-        <div class="project__meta"><h3>Cookery</h3><p>Project management · iOS development</p><span class="project__go">App Store ↗</span></div>
+        <div class="project__meta"><h3>Cookery</h3><p data-ar="إدارة مشروع · تطوير iOS">Project management · iOS development</p><span class="project__go">App Store ↗</span></div>
       </a>
       <a class="project tilt reveal" href="https://apple.co/3GYc3Kl" target="_blank" rel="noopener">
         <div class="project__img"><img src="assets/fusha.webp" alt="Fusha e-learning app" loading="lazy" width="1200" height="676"></div>
-        <div class="project__meta"><h3>Fusha E-learning</h3><p>Project management</p><span class="project__go">App Store ↗</span></div>
+        <div class="project__meta"><h3 data-ar="فصحى للتعليم الإلكتروني">Fusha E-learning</h3><p data-ar="إدارة مشروع">Project management</p><span class="project__go">App Store ↗</span></div>
       </a>
       <a class="project tilt reveal" href="https://salahseleemteam.com/" target="_blank" rel="noopener">
         <div class="project__img"><img src="assets/sst.webp" alt="SST website" loading="lazy" width="1200" height="675"></div>
-        <div class="project__meta"><h3>SST Website</h3><p>Project management</p><span class="project__go">Visit ↗</span></div>
+        <div class="project__meta"><h3 data-ar="موقع SST">SST Website</h3><p data-ar="إدارة مشروع">Project management</p><span class="project__go" data-ar="زيارة ↖">Visit ↗</span></div>
       </a>
       <a class="project tilt reveal" href="http://egygool.com/" target="_blank" rel="noopener">
         <div class="project__img"><img src="assets/egygool.webp" alt="Egygool football platform" loading="lazy" width="1200" height="675"></div>
-        <div class="project__meta"><h3>Egygool</h3><p>Football platform</p><span class="project__go">Visit ↗</span></div>
+        <div class="project__meta"><h3>Egygool</h3><p data-ar="منصة كرة قدم">Football platform</p><span class="project__go" data-ar="زيارة ↖">Visit ↗</span></div>
       </a>
       <a class="project tilt reveal" href="https://mahd-eldahab.quarizm.online/" target="_blank" rel="noopener">
         <div class="project__img"><img src="assets/mahd.webp" alt="Mahd Eldahab jewellery store" loading="lazy" width="910" height="792"></div>
-        <div class="project__meta"><h3>Mahd Eldahab</h3><p>Jewellery storefront · Quarizm</p><span class="project__go">Visit ↗</span></div>
+        <div class="project__meta"><h3 data-ar="مهد الذهب">Mahd Eldahab</h3><p data-ar="متجر مجوهرات · Quarizm">Jewellery storefront · Quarizm</p><span class="project__go" data-ar="زيارة ↖">Visit ↗</span></div>
       </a>
     </div>
   </div>
@@ -315,35 +317,35 @@
   <div class="wrap">
     <header class="head reveal">
       <span class="head__no">05</span>
-      <h2 class="head__title scramble-in" data-text="Talks & videos">Talks &amp; videos</h2>
+      <h2 class="head__title scramble-in" data-text="Talks & videos" data-ar="محاضرات وفيديوهات">Talks &amp; videos</h2>
     </header>
 
     <div class="talks">
       <article class="talk reveal">
         <div class="talk__img"><img src="assets/talk-takeoff.webp" alt="Mohamed Lotfy speaking at Take Off" loading="lazy" width="900" height="903"></div>
-        <div><h3>Passionate about technology</h3><p>For anyone passionate about technology and building things — especially mobile apps — or studying software engineering.</p></div>
+        <div><h3 data-ar="شغف بالتقنية">Passionate about technology</h3><p data-ar="لكل شغوف بالتقنية وبناء الأشياء، خاصة تطبيقات الجوال، أو يدرس هندسة البرمجيات.">For anyone passionate about technology and building things — especially mobile apps — or studying software engineering.</p></div>
       </article>
       <article class="talk reveal">
         <div class="talk__img"><img src="assets/talk-gdsc.webp" alt="Mohamed Lotfy giving an iOS development session" loading="lazy" width="900" height="900"></div>
-        <div><h3>iOS development</h3><p>What iOS is, why it exists, how to get started, careers and finding work, what happens when an app is created, and development advice.</p></div>
+        <div><h3 data-ar="تطوير iOS">iOS development</h3><p data-ar="ما هو iOS ولماذا وُجد، كيف تبدأ، المسار المهني وإيجاد عمل، ماذا يحدث عند بناء تطبيق، ونصائح في التطوير.">What iOS is, why it exists, how to get started, careers and finding work, what happens when an app is created, and development advice.</p></div>
       </article>
     </div>
 
     <div class="videos">
-      <a class="video spot reveal" target="_blank" rel="noopener" href="https://player.vimeo.com/progressive_redirect/playback/781984335/rendition/720p/file.mp4?loc=external&amp;oauth2_token_id=1516343399&amp;signature=b3be9de75269032af6f9ce5233c878b647df8fe1a9393cbf53c6aa172b20e2c7"><span class="video__play" aria-hidden="true"></span><span class="video__t">Why software?</span></a>
-      <a class="video spot reveal" target="_blank" rel="noopener" href="https://player.vimeo.com/progressive_redirect/playback/781986441/rendition/720p/file.mp4?loc=external&amp;oauth2_token_id=1516343399&amp;signature=520b8c2b8d5bafe6a80a66cfd2a88bb6d0e6634e5b5fe254a8feab3044647fd9"><span class="video__play" aria-hidden="true"></span><span class="video__t">SST is an example</span></a>
-      <a class="video spot reveal" target="_blank" rel="noopener" href="https://player.vimeo.com/progressive_redirect/playback/781988611/rendition/720p/file.mp4?loc=external&amp;oauth2_token_id=1516343399&amp;signature=5da8e1129d4330a2afd894604d362c6956f55a4fd3b5a5e48cd0c25e79d33ebf"><span class="video__play" aria-hidden="true"></span><span class="video__t">How should you start with any software?</span></a>
-      <a class="video spot reveal" target="_blank" rel="noopener" href="https://player.vimeo.com/progressive_redirect/playback/1143299835/rendition/720p/file.mp4?loc=external&amp;oauth2_token_id=1516343399&amp;signature=a3e2d1d2ed8b5ec77f5d204bec4687146ef5e962258a26bf5abc566567f05763"><span class="video__play" aria-hidden="true"></span><span class="video__t">If you’re a startup owner</span></a>
+      <a class="video spot reveal" target="_blank" rel="noopener" href="https://player.vimeo.com/progressive_redirect/playback/781984335/rendition/720p/file.mp4?loc=external&amp;oauth2_token_id=1516343399&amp;signature=b3be9de75269032af6f9ce5233c878b647df8fe1a9393cbf53c6aa172b20e2c7"><span class="video__play" aria-hidden="true"></span><span class="video__t" data-ar="لماذا البرمجيات؟">Why software?</span></a>
+      <a class="video spot reveal" target="_blank" rel="noopener" href="https://player.vimeo.com/progressive_redirect/playback/781986441/rendition/720p/file.mp4?loc=external&amp;oauth2_token_id=1516343399&amp;signature=520b8c2b8d5bafe6a80a66cfd2a88bb6d0e6634e5b5fe254a8feab3044647fd9"><span class="video__play" aria-hidden="true"></span><span class="video__t" data-ar="SST كمثال">SST is an example</span></a>
+      <a class="video spot reveal" target="_blank" rel="noopener" href="https://player.vimeo.com/progressive_redirect/playback/781988611/rendition/720p/file.mp4?loc=external&amp;oauth2_token_id=1516343399&amp;signature=5da8e1129d4330a2afd894604d362c6956f55a4fd3b5a5e48cd0c25e79d33ebf"><span class="video__play" aria-hidden="true"></span><span class="video__t" data-ar="كيف تبدأ أي مشروع برمجي؟">How should you start with any software?</span></a>
+      <a class="video spot reveal" target="_blank" rel="noopener" href="https://player.vimeo.com/progressive_redirect/playback/1143299835/rendition/720p/file.mp4?loc=external&amp;oauth2_token_id=1516343399&amp;signature=a3e2d1d2ed8b5ec77f5d204bec4687146ef5e962258a26bf5abc566567f05763"><span class="video__play" aria-hidden="true"></span><span class="video__t" data-ar="إن كنت صاحب شركة ناشئة">If you’re a startup owner</span></a>
     </div>
 
     <div class="quotes">
       <figure class="quote reveal">
-        <blockquote>I rarely come across real talents who stand out like Mohamed. His ability to handle multiple projects was unlike any I’ve seen before. No matter how tense a meeting, Mohamed made sure everyone left with a smile. As a team member or a leader, Mohamed earns my highest recommendation.</blockquote>
-        <figcaption><img src="assets/ali.webp" alt="" width="200" height="200" loading="lazy"><span><b>Ali Hamed</b>Senior iOS Engineer at Robusta Studio</span></figcaption>
+        <blockquote data-ar="قلّما أقابل موهبة حقيقية تبرز مثل محمد. قدرته على إدارة عدة مشاريع معًا لم أرَ مثلها. مهما كان الاجتماع متوترًا، يحرص محمد أن يخرج الجميع مبتسمين. كعضو فريق أو كقائد، يستحق محمد أعلى توصية مني.">I rarely come across real talents who stand out like Mohamed. His ability to handle multiple projects was unlike any I’ve seen before. No matter how tense a meeting, Mohamed made sure everyone left with a smile. As a team member or a leader, Mohamed earns my highest recommendation.</blockquote>
+        <figcaption><img src="assets/ali.webp" alt="" width="200" height="200" loading="lazy"><span data-ar="&lt;b&gt;علي حامد&lt;/b&gt;مهندس iOS أول في Robusta Studio"><b>Ali Hamed</b>Senior iOS Engineer at Robusta Studio</span></figcaption>
       </figure>
       <figure class="quote reveal">
-        <blockquote>An outstanding developer who seeks to solve problems all the time, not just in his specific field of work. If I can describe him in a phrase: he is a problem solver.</blockquote>
-        <figcaption><img src="assets/omar.webp" alt="" width="200" height="200" loading="lazy"><span><b>Omar Sakr</b>Android Engineer at Foodics</span></figcaption>
+        <blockquote data-ar="مطوّر متميز يسعى لحل المشكلات طوال الوقت، وليس في مجال تخصصه فقط. لو وصفته بكلمة: هو حلّال مشاكل.">An outstanding developer who seeks to solve problems all the time, not just in his specific field of work. If I can describe him in a phrase: he is a problem solver.</blockquote>
+        <figcaption><img src="assets/omar.webp" alt="" width="200" height="200" loading="lazy"><span data-ar="&lt;b&gt;عمر صقر&lt;/b&gt;مهندس أندرويد في Foodics"><b>Omar Sakr</b>Android Engineer at Foodics</span></figcaption>
       </figure>
     </div>
   </div>
@@ -353,15 +355,15 @@
 <section class="section contact" id="contact">
   <div class="contact__grid" aria-hidden="true"></div>
   <div class="wrap">
-    <p class="tag reveal"><span class="pulse"></span>Open for startups, consultations, collaborations &amp; partnerships</p>
-    <h2 class="contact__title split">Let’s build it together.</h2>
+    <p class="tag reveal" data-ar="&lt;span class=&quot;pulse&quot;&gt;&lt;/span&gt;متاح للشركات الناشئة والاستشارات والتعاون والشراكات"><span class="pulse"></span>Open for startups, consultations, collaborations &amp; partnerships</p>
+    <h2 class="contact__title split" data-ar="لنبنِها معًا.">Let’s build it together.</h2>
 
     <div class="contact__cols">
       <div class="contact__info reveal">
         <a class="contact__mail" href="mailto:mohamed_lotfy@codebase-tech.com">mohamed_lotfy@codebase-tech.com</a>
         <a class="contact__phone" href="tel:+201553968880">+20 155 396 8880</a>
         <ul class="social">
-          <li><a class="magnetic" href="https://www.linkedin.com/in/mohamed-lotfy-emara" target="_blank" rel="noopener">LinkedIn · 5.5K followers ↗</a></li>
+          <li><a class="magnetic" href="https://www.linkedin.com/in/mohamed-lotfy-emara" target="_blank" rel="noopener" data-ar="لينكد إن · 5.5 ألف متابع ↖">LinkedIn · 5.5K followers ↗</a></li>
           <li><a class="magnetic" href="https://www.instagram.com/mo7mdlotfy/" target="_blank" rel="noopener">Instagram ↗</a></li>
           <li><a class="magnetic" href="https://twitter.com/mohamedlotfy944" target="_blank" rel="noopener">Twitter ↗</a></li>
           <li><a class="magnetic" href="https://www.facebook.com/mohamed.lotfy.33" target="_blank" rel="noopener">Facebook ↗</a></li>
@@ -369,17 +371,17 @@
       </div>
 
       <form class="form reveal" id="form" novalidate>
-        <label for="f-topic"><span>I’m reaching out about</span>
+        <label for="f-topic"><span data-ar="أتواصل بخصوص">I’m reaching out about</span>
           <select id="f-topic" name="topic" required>
-            <option>Building a startup</option>
-            <option>Consultation</option>
-            <option>Collaboration or partnership</option>
+            <option value="Building a startup" data-ar="بناء شركة ناشئة">Building a startup</option>
+            <option value="Consultation" data-ar="استشارة">Consultation</option>
+            <option value="Collaboration or partnership" data-ar="تعاون أو شراكة">Collaboration or partnership</option>
           </select>
         </label>
-        <label for="f-name"><span>Name</span><input id="f-name" name="name" type="text" autocomplete="name" required></label>
-        <label for="f-email"><span>Email</span><input id="f-email" name="email" type="email" autocomplete="email" required></label>
-        <label for="f-message"><span>Tell me about it</span><textarea id="f-message" name="message" rows="4" required></textarea></label>
-        <button class="btn btn--solid magnetic" type="submit"><span>Send message</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <label for="f-name"><span data-ar="الاسم">Name</span><input id="f-name" name="name" type="text" autocomplete="name" required></label>
+        <label for="f-email"><span data-ar="البريد الإلكتروني">Email</span><input id="f-email" name="email" type="email" autocomplete="email" required></label>
+        <label for="f-message"><span data-ar="حدّثني عن فكرتك">Tell me about it</span><textarea id="f-message" name="message" rows="4" required></textarea></label>
+        <button class="btn btn--solid magnetic" type="submit"><span data-ar="أرسل الرسالة">Send message</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
         <p class="form__note" id="formNote" role="status"></p>
       </form>
     </div>
@@ -392,7 +394,7 @@
   <div class="wrap footer__in">
     <span>© <span id="year"></span> Mohamed Lotfy</span>
     <span class="footer__mono">lotfy.me — build · profit · scale</span>
-    <a href="#top">Back to top ↑</a>
+    <a href="#top" data-ar="إلى الأعلى ↑">Back to top ↑</a>
   </div>
 </footer>
 
