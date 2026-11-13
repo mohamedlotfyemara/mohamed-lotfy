@@ -230,8 +230,6 @@
     nav.classList.toggle('is-hidden', y > lastY && y > 500);
     lastY = y;
 
-    const tr = timeline.getBoundingClientRect();
-    timeline.style.setProperty('--fill', clamp((vh * 0.6 - tr.top) / tr.height, 0, 1));
 
     const br = bigtext.getBoundingClientRect();
     if (br.top < vh && br.bottom > 0 && !reduced)
