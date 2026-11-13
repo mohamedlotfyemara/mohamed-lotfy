@@ -13,6 +13,6 @@ The form on lotfy.me writes each submission as a new row in the sheet
 4. Approve the permissions and copy the **Web app URL** (ends in `/exec`).
 5. Paste that URL into `SHEET_ENDPOINT` in `js/main.js`.
 
-Until `SHEET_ENDPOINT` is filled in, the form falls back to opening the visitor's mail app.
+Until `SHEET_ENDPOINT` is filled in, the form cannot deliver: it shows a failure note with the contact email.
 
 After changing `Code.gs`, use **Deploy → Manage deployments → Edit → New version** so the URL stays the same.

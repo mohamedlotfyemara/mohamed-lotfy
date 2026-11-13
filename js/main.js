@@ -307,15 +307,14 @@
 
   /* ---------- Contact form → Google Sheet ---------- */
   // Paste the Google Apps Script web app URL here (see google-apps-script/README.md).
-  // While it is empty the form falls back to opening the visitor's mail app.
+  // While it is empty the form cannot deliver and shows the failure note.
   const SHEET_ENDPOINT = '';
   const CONTACT_EMAIL = 'consult@lotfy.me';
   const MSG = {
     invalid: { en: '> please fill in every field, with a valid email and phone number.', ar: 'يرجى تعبئة جميع الحقول والتأكد من البريد الإلكتروني ورقم الجوال.' },
     sending: { en: '> sending…', ar: 'جارٍ الإرسال…' },
     sent: { en: '> received. I will get back to you soon.', ar: 'تم استلام طلبك، وسأتواصل معك قريبًا.' },
-    failed: { en: '> could not send. Please try again, or write to ' + CONTACT_EMAIL, ar: 'تعذّر الإرسال. حاول مرة أخرى أو راسلني على ' + CONTACT_EMAIL },
-    mail: { en: '> your message is ready. Press send in your mail app and it will reach me.', ar: 'رسالتك جاهزة. اضغط «إرسال» في تطبيق البريد ليصلني طلبك.' }
+    failed: { en: '> could not send. Please try again, or write to ' + CONTACT_EMAIL, ar: 'تعذّر الإرسال. حاول مرة أخرى أو راسلني على ' + CONTACT_EMAIL }
   };
   const form = $('#form'), note = $('#formNote');
   const say = key => { note.textContent = MSG[key][lang]; };
@@ -324,12 +323,9 @@
     if (!form.checkValidity()) { say('invalid'); form.reportValidity(); return; }
     const d = new FormData(form);
     if (d.get('website')) return; // bots fill the hidden field
-    if (!SHEET_ENDPOINT) {
-      const body = `${d.get('message')}\n\n— ${d.get('name')} (${d.get('email')}, ${d.get('phone')})`;
-      location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(d.get('topic') + ' — ' + d.get('name'))}&body=${encodeURIComponent(body)}`;
-      say('mail');
-      return;
-    }
+    // Phones typed with Arabic-Indic digits are stored as Latin digits.
+    d.set('phone', String(d.get('phone')).replace(/[٠-٩]/g, c => '٠١٢٣٤٥٦٧٨٩'.indexOf(c)));
+    if (!SHEET_ENDPOINT) { say('failed'); return; }
     const btn = form.querySelector('button[type="submit"]');
     btn.disabled = true;
     say('sending');
