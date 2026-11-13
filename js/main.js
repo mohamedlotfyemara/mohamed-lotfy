@@ -12,7 +12,7 @@
   /* ---------- Language (English / Arabic) ---------- */
   const TITLES = {
     en: document.title,
-    ar: 'محمد لطفي — أؤسس الشركات الناشئة من الصفر حتى الربح والتوسّع'
+    ar: 'محمد لطفي — ابنِ صح. حقّق الربحية. ثم توسّع.'
   };
   const langBtn = $('#langToggle');
   let lang = 'en';
@@ -97,8 +97,8 @@
 
   /* ---------- Typed roles ---------- */
   const ROLES = {
-    en: ['profitable companies.', 'startups that scale.', 'brands that sell.', 'businesses that run without you.'],
-    ar: ['شركات رابحة.', 'مشاريع تتوسّع.', 'علامات تجارية تبيع.', 'أعمال تدير نفسها.']
+    en: ['from idea to launch.', 'from launch to customers.', 'from revenue to profit and scale.'],
+    ar: ['من الفكرة إلى الإطلاق.', 'من الإطلاق إلى العملاء.', 'من الإيرادات إلى الربحية والتوسع.']
   };
   const typed = $('#typed');
   function typeLoop() {
@@ -314,7 +314,7 @@
 
   /* ---------- Topic shortcuts: preselect the form topic ---------- */
   $$('[data-topic]').forEach(el => el.addEventListener('click', () => {
-    $('#f-topic').value = el.dataset.topic;
+    $('#f-stage').value = el.dataset.topic;
     track('cta', { topic: el.dataset.topic });
   }));
 
@@ -362,7 +362,7 @@
       const res = await fetch(SHEET_ENDPOINT, { method: 'POST', body: data });
       const out = await res.json();
       if (!out.ok) throw new Error('rejected');
-      track('lead', { topic: d.get('topic'), stage: d.get('stage') });
+      track('lead', { stage: d.get('stage') });
       form.reset();
       say('sent');
     } catch (err) {

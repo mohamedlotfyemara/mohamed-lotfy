@@ -1,7 +1,7 @@
 # Contact form → Google Sheet
 
 The form on lotfy.me writes each submission as a new row in the sheet
-"lotfy.me — Contact form leads". Columns: Date, Topic, Stage, Name, Phone, Email, Message, Language.
+"lotfy.me — Contact form leads". Columns: Date, Stage, Name, Phone, Email, Message, Language.
 
 ## One-time setup
 
